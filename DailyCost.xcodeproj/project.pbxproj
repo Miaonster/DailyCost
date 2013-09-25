@@ -16,23 +16,10 @@
 		E183428B17F26A0900E319B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E183428A17F26A0900E319B3 /* AppDelegate.m */; };
 		E183428E17F26A0900E319B3 /* DailyCost.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E183428C17F26A0900E319B3 /* DailyCost.xcdatamodeld */; };
 		E183429017F26A0900E319B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E183428F17F26A0900E319B3 /* Images.xcassets */; };
-		E183429717F26A0900E319B3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E183429617F26A0900E319B3 /* XCTest.framework */; };
-		E183429817F26A0900E319B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E183427817F26A0900E319B3 /* Foundation.framework */; };
-		E183429917F26A0900E319B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E183427C17F26A0900E319B3 /* UIKit.framework */; };
-		E183429A17F26A0900E319B3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E183427E17F26A0900E319B3 /* CoreData.framework */; };
-		E18342A217F26A0900E319B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18342A017F26A0900E319B3 /* InfoPlist.strings */; };
-		E18342A417F26A0900E319B3 /* DailyCostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E18342A317F26A0900E319B3 /* DailyCostTests.m */; };
+		E18342B117F26AE500E319B3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18342AF17F26AE500E319B3 /* MainViewController.m */; };
+		E18342B217F26AE500E319B3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E18342B017F26AE500E319B3 /* MainViewController.xib */; };
+		E18342BB17F2737B00E319B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18342BD17F2737B00E319B3 /* Localizable.strings */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E183429B17F26A0900E319B3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E183426D17F26A0900E319B3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E183427417F26A0900E319B3;
-			remoteInfo = DailyCost;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E183427517F26A0900E319B3 /* DailyCost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyCost.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,11 +35,14 @@
 		E183428A17F26A0900E319B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E183428D17F26A0900E319B3 /* DailyCost.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyCost.xcdatamodel; sourceTree = "<group>"; };
 		E183428F17F26A0900E319B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E183429517F26A0900E319B3 /* DailyCostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyCostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E183429617F26A0900E319B3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		E183429F17F26A0900E319B3 /* DailyCostTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DailyCostTests-Info.plist"; sourceTree = "<group>"; };
-		E18342A117F26A0900E319B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E18342A317F26A0900E319B3 /* DailyCostTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyCostTests.m; sourceTree = "<group>"; };
+		E18342AE17F26AE500E319B3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E18342AF17F26AE500E319B3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E18342B017F26AE500E319B3 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		E18342B517F26E1600E319B3 /* GlobalDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
+		E18342BC17F2737B00E319B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E18342BE17F2740D00E319B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E18342BF17F2740D00E319B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,17 +57,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E183429217F26A0900E319B3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E183429717F26A0900E319B3 /* XCTest.framework in Frameworks */,
-				E183429A17F26A0900E319B3 /* CoreData.framework in Frameworks */,
-				E183429917F26A0900E319B3 /* UIKit.framework in Frameworks */,
-				E183429817F26A0900E319B3 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				E183428017F26A0900E319B3 /* DailyCost */,
-				E183429D17F26A0900E319B3 /* DailyCostTests */,
 				E183427717F26A0900E319B3 /* Frameworks */,
 				E183427617F26A0900E319B3 /* Products */,
 			);
@@ -95,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				E183427517F26A0900E319B3 /* DailyCost.app */,
-				E183429517F26A0900E319B3 /* DailyCostTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +92,8 @@
 		E183428017F26A0900E319B3 /* DailyCost */ = {
 			isa = PBXGroup;
 			children = (
+				E18342B517F26E1600E319B3 /* GlobalDefine.h */,
+				E18342AD17F26AC500E319B3 /* Main */,
 				E183428917F26A0900E319B3 /* AppDelegate.h */,
 				E183428A17F26A0900E319B3 /* AppDelegate.m */,
 				E183428F17F26A0900E319B3 /* Images.xcassets */,
@@ -131,26 +110,19 @@
 				E183428317F26A0900E319B3 /* InfoPlist.strings */,
 				E183428617F26A0900E319B3 /* main.m */,
 				E183428817F26A0900E319B3 /* DailyCost-Prefix.pch */,
+				E18342BD17F2737B00E319B3 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E183429D17F26A0900E319B3 /* DailyCostTests */ = {
+		E18342AD17F26AC500E319B3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E18342A317F26A0900E319B3 /* DailyCostTests.m */,
-				E183429E17F26A0900E319B3 /* Supporting Files */,
+				E18342AE17F26AE500E319B3 /* MainViewController.h */,
+				E18342AF17F26AE500E319B3 /* MainViewController.m */,
+				E18342B017F26AE500E319B3 /* MainViewController.xib */,
 			);
-			path = DailyCostTests;
-			sourceTree = "<group>";
-		};
-		E183429E17F26A0900E319B3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E183429F17F26A0900E319B3 /* DailyCostTests-Info.plist */,
-				E18342A017F26A0900E319B3 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,24 +145,6 @@
 			productReference = E183427517F26A0900E319B3 /* DailyCost.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E183429417F26A0900E319B3 /* DailyCostTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E18342AA17F26A0900E319B3 /* Build configuration list for PBXNativeTarget "DailyCostTests" */;
-			buildPhases = (
-				E183429117F26A0900E319B3 /* Sources */,
-				E183429217F26A0900E319B3 /* Frameworks */,
-				E183429317F26A0900E319B3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E183429C17F26A0900E319B3 /* PBXTargetDependency */,
-			);
-			name = DailyCostTests;
-			productName = DailyCostTests;
-			productReference = E183429517F26A0900E319B3 /* DailyCostTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,8 +154,8 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = ChuanliangShang;
 				TargetAttributes = {
-					E183429417F26A0900E319B3 = {
-						TestTargetID = E183427417F26A0900E319B3;
+					E183427417F26A0900E319B3 = {
+						DevelopmentTeam = H68GNEACTW;
 					};
 				};
 			};
@@ -211,6 +165,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = E183426C17F26A0900E319B3;
 			productRefGroup = E183427617F26A0900E319B3 /* Products */;
@@ -218,7 +173,6 @@
 			projectRoot = "";
 			targets = (
 				E183427417F26A0900E319B3 /* DailyCost */,
-				E183429417F26A0900E319B3 /* DailyCostTests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,15 +183,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E183428517F26A0900E319B3 /* InfoPlist.strings in Resources */,
+				E18342BB17F2737B00E319B3 /* Localizable.strings in Resources */,
+				E18342B217F26AE500E319B3 /* MainViewController.xib in Resources */,
 				E183429017F26A0900E319B3 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E183429317F26A0900E319B3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E18342A217F26A0900E319B3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,42 +199,29 @@
 				E183428B17F26A0900E319B3 /* AppDelegate.m in Sources */,
 				E183428E17F26A0900E319B3 /* DailyCost.xcdatamodeld in Sources */,
 				E183428717F26A0900E319B3 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E183429117F26A0900E319B3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E18342A417F26A0900E319B3 /* DailyCostTests.m in Sources */,
+				E18342B117F26AE500E319B3 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E183429C17F26A0900E319B3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E183427417F26A0900E319B3 /* DailyCost */;
-			targetProxy = E183429B17F26A0900E319B3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E183428317F26A0900E319B3 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E183428417F26A0900E319B3 /* en */,
+				E18342BE17F2740D00E319B3 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		E18342A017F26A0900E319B3 /* InfoPlist.strings */ = {
+		E18342BD17F2737B00E319B3 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E18342A117F26A0900E319B3 /* en */,
+				E18342BC17F2737B00E319B3 /* en */,
+				E18342BF17F2740D00E319B3 /* zh-Hans */,
 			);
-			name = InfoPlist.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -369,6 +304,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DailyCost/DailyCost-Prefix.pch";
 				INFOPLIST_FILE = "DailyCost/DailyCost-Info.plist";
@@ -382,53 +318,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DailyCost/DailyCost-Prefix.pch";
 				INFOPLIST_FILE = "DailyCost/DailyCost-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		E18342AB17F26A0900E319B3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DailyCost.app/DailyCost";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DailyCost/DailyCost-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DailyCostTests/DailyCostTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		E18342AC17F26A0900E319B3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DailyCost.app/DailyCost";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DailyCost/DailyCost-Prefix.pch";
-				INFOPLIST_FILE = "DailyCostTests/DailyCostTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -449,14 +344,6 @@
 			buildConfigurations = (
 				E18342A817F26A0900E319B3 /* Debug */,
 				E18342A917F26A0900E319B3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		E18342AA17F26A0900E319B3 /* Build configuration list for PBXNativeTarget "DailyCostTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E18342AB17F26A0900E319B3 /* Debug */,
-				E18342AC17F26A0900E319B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

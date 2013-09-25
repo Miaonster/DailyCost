@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  DailyCost
+
+  Created by Scliang on 13-9-25.
+  Copyright (c) 2013年 ChuanliangShang. All rights reserved.
+*/
+
+"MainTitle"         = "This Month Cost";
+"IncomeLabel"       = "Income";
+"ExpenseLabel"      = "Expense";

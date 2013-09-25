@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  DailyCost
+
+  Created by Scliang on 13-9-25.
+  Copyright (c) 2013年 ChuanliangShang. All rights reserved.
+*/
+
+"MainTitle"         = "本月账单";
+"IncomeLabel"       = "总收入";
+"ExpenseLabel"      = "总支出";
