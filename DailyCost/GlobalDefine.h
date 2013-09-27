@@ -10,4 +10,14 @@
 #define DailyCost_GlobalDefine_h
 
 
+// DEBUG switch
+#define _DEBUG                    1
+
+
+// 定义CostType: Income|Expense
+#define CostType_Income           0x101
+#define CostType_Expense          0x102
+
+
+
 #endif

@@ -6,6 +6,13 @@
   Copyright (c) 2013年 ChuanliangShang. All rights reserved.
 */
 
-"MainTitle"         = "This Month Cost";
-"IncomeLabel"       = "Income";
-"ExpenseLabel"      = "Expense";
+"MainTitle"          = "This Month Cost";
+"IncomeLabel"        = "Income";
+"ExpenseLabel"       = "Expense";
+
+"NewCostTitle"       = "The New Cost";
+"NewIncomeTitle"     = "The New Income";
+"NewExpenseTitle"    = "The New Expense";
+"NewCostPlaceholder" = "#Family Movies 389";
+"NewCostIncomeType"        = "Income";
+"NewCostExpenseType"       = "Expense";

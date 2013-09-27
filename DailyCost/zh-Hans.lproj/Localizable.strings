@@ -6,6 +6,13 @@
   Copyright (c) 2013年 ChuanliangShang. All rights reserved.
 */
 
-"MainTitle"         = "本月账单";
-"IncomeLabel"       = "总收入";
-"ExpenseLabel"      = "总支出";
+"MainTitle"          = "本月账单";
+"IncomeLabel"        = "总收入";
+"ExpenseLabel"       = "总支出";
+
+"NewCostTitle"       = "一条新账目";
+"NewIncomeTitle"     = "一条新收入";
+"NewExpenseTitle"    = "一条新支出";
+"NewCostPlaceholder" = "#给孩子买玩具 68";
+"NewCostIncomeType"        = "收入";
+"NewCostExpenseType"       = "支出";

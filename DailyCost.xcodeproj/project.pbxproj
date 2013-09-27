@@ -19,6 +19,21 @@
 		E18342B117F26AE500E319B3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18342AF17F26AE500E319B3 /* MainViewController.m */; };
 		E18342B217F26AE500E319B3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E18342B017F26AE500E319B3 /* MainViewController.xib */; };
 		E18342BB17F2737B00E319B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18342BD17F2737B00E319B3 /* Localizable.strings */; };
+		E18342CA17F28E9E00E319B3 /* NewCostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18342C817F28E9E00E319B3 /* NewCostViewController.m */; };
+		E18342CB17F28E9E00E319B3 /* NewCostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E18342C917F28E9E00E319B3 /* NewCostViewController.xib */; };
+		E1DCEEF917F3E8F100271C6A /* Cost.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DCEEF817F3E8F100271C6A /* Cost.m */; };
+		E1DCEEFC17F40F5D00271C6A /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DCEEFB17F40F5D00271C6A /* UUID.m */; };
+		E1DCEF0017F41CAF00271C6A /* SqliteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DCEEFF17F41CAF00271C6A /* SqliteHelper.m */; };
+		E1DCEF0217F41E0300271C6A /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DCEF0117F41E0300271C6A /* libsqlite3.0.dylib */; };
+		E1DCEF0C17F440D500271C6A /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0317F440D500271C6A /* add.png */; };
+		E1DCEF0D17F440D500271C6A /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0417F440D500271C6A /* back.png */; };
+		E1DCEF0E17F440D500271C6A /* complete.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0517F440D500271C6A /* complete.png */; };
+		E1DCEF0F17F440D500271C6A /* t_press.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0617F440D500271C6A /* t_press.png */; };
+		E1DCEF1017F440D500271C6A /* t.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0717F440D500271C6A /* t.png */; };
+		E1DCEF1117F440D500271C6A /* type_left_press.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0817F440D500271C6A /* type_left_press.png */; };
+		E1DCEF1217F440D500271C6A /* type_left.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0917F440D500271C6A /* type_left.png */; };
+		E1DCEF1317F440D500271C6A /* type_right_press.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0A17F440D500271C6A /* type_right_press.png */; };
+		E1DCEF1417F440D500271C6A /* type_right.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0B17F440D500271C6A /* type_right.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,9 +55,28 @@
 		E18342AF17F26AE500E319B3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E18342B017F26AE500E319B3 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		E18342B517F26E1600E319B3 /* GlobalDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
-		E18342BC17F2737B00E319B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E18342BC17F2737B00E319B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E18342BE17F2740D00E319B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		E18342BF17F2740D00E319B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E18342BF17F2740D00E319B3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E18342C717F28E9E00E319B3 /* NewCostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCostViewController.h; sourceTree = "<group>"; };
+		E18342C817F28E9E00E319B3 /* NewCostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCostViewController.m; sourceTree = "<group>"; };
+		E18342C917F28E9E00E319B3 /* NewCostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewCostViewController.xib; sourceTree = "<group>"; };
+		E1DCEEF717F3E8F100271C6A /* Cost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cost.h; sourceTree = "<group>"; };
+		E1DCEEF817F3E8F100271C6A /* Cost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cost.m; sourceTree = "<group>"; };
+		E1DCEEFA17F40F5D00271C6A /* UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUID.h; sourceTree = "<group>"; };
+		E1DCEEFB17F40F5D00271C6A /* UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUID.m; sourceTree = "<group>"; };
+		E1DCEEFE17F41CAF00271C6A /* SqliteHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteHelper.h; sourceTree = "<group>"; };
+		E1DCEEFF17F41CAF00271C6A /* SqliteHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteHelper.m; sourceTree = "<group>"; };
+		E1DCEF0117F41E0300271C6A /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		E1DCEF0317F440D500271C6A /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		E1DCEF0417F440D500271C6A /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		E1DCEF0517F440D500271C6A /* complete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = complete.png; sourceTree = "<group>"; };
+		E1DCEF0617F440D500271C6A /* t_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t_press.png; sourceTree = "<group>"; };
+		E1DCEF0717F440D500271C6A /* t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t.png; sourceTree = "<group>"; };
+		E1DCEF0817F440D500271C6A /* type_left_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_left_press.png; sourceTree = "<group>"; };
+		E1DCEF0917F440D500271C6A /* type_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_left.png; sourceTree = "<group>"; };
+		E1DCEF0A17F440D500271C6A /* type_right_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_right_press.png; sourceTree = "<group>"; };
+		E1DCEF0B17F440D500271C6A /* type_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_right.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DCEF0217F41E0300271C6A /* libsqlite3.0.dylib in Frameworks */,
 				E183427B17F26A0900E319B3 /* CoreGraphics.framework in Frameworks */,
 				E183427F17F26A0900E319B3 /* CoreData.framework in Frameworks */,
 				E183427D17F26A0900E319B3 /* UIKit.framework in Frameworks */,
@@ -80,6 +115,7 @@
 		E183427717F26A0900E319B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1DCEF0117F41E0300271C6A /* libsqlite3.0.dylib */,
 				E183427817F26A0900E319B3 /* Foundation.framework */,
 				E183427A17F26A0900E319B3 /* CoreGraphics.framework */,
 				E183427C17F26A0900E319B3 /* UIKit.framework */,
@@ -93,11 +129,14 @@
 			isa = PBXGroup;
 			children = (
 				E18342B517F26E1600E319B3 /* GlobalDefine.h */,
+				E1DCEEFD17F41CA100271C6A /* Model */,
+				E1DCEEF617F3E8C700271C6A /* Object */,
 				E18342AD17F26AC500E319B3 /* Main */,
 				E183428917F26A0900E319B3 /* AppDelegate.h */,
 				E183428A17F26A0900E319B3 /* AppDelegate.m */,
 				E183428F17F26A0900E319B3 /* Images.xcassets */,
 				E183428C17F26A0900E319B3 /* DailyCost.xcdatamodeld */,
+				E18342C417F289CB00E319B3 /* Images */,
 				E183428117F26A0900E319B3 /* Supporting Files */,
 			);
 			path = DailyCost;
@@ -121,8 +160,47 @@
 				E18342AE17F26AE500E319B3 /* MainViewController.h */,
 				E18342AF17F26AE500E319B3 /* MainViewController.m */,
 				E18342B017F26AE500E319B3 /* MainViewController.xib */,
+				E18342C717F28E9E00E319B3 /* NewCostViewController.h */,
+				E18342C817F28E9E00E319B3 /* NewCostViewController.m */,
+				E18342C917F28E9E00E319B3 /* NewCostViewController.xib */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		E18342C417F289CB00E319B3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E1DCEF0317F440D500271C6A /* add.png */,
+				E1DCEF0417F440D500271C6A /* back.png */,
+				E1DCEF0517F440D500271C6A /* complete.png */,
+				E1DCEF0617F440D500271C6A /* t_press.png */,
+				E1DCEF0717F440D500271C6A /* t.png */,
+				E1DCEF0817F440D500271C6A /* type_left_press.png */,
+				E1DCEF0917F440D500271C6A /* type_left.png */,
+				E1DCEF0A17F440D500271C6A /* type_right_press.png */,
+				E1DCEF0B17F440D500271C6A /* type_right.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		E1DCEEF617F3E8C700271C6A /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				E1DCEEFA17F40F5D00271C6A /* UUID.h */,
+				E1DCEEFB17F40F5D00271C6A /* UUID.m */,
+				E1DCEEF717F3E8F100271C6A /* Cost.h */,
+				E1DCEEF817F3E8F100271C6A /* Cost.m */,
+			);
+			name = Object;
+			sourceTree = "<group>";
+		};
+		E1DCEEFD17F41CA100271C6A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1DCEEFE17F41CAF00271C6A /* SqliteHelper.h */,
+				E1DCEEFF17F41CAF00271C6A /* SqliteHelper.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,8 +260,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DCEF1317F440D500271C6A /* type_right_press.png in Resources */,
+				E1DCEF1017F440D500271C6A /* t.png in Resources */,
+				E1DCEF1417F440D500271C6A /* type_right.png in Resources */,
+				E1DCEF0E17F440D500271C6A /* complete.png in Resources */,
 				E183428517F26A0900E319B3 /* InfoPlist.strings in Resources */,
+				E18342CB17F28E9E00E319B3 /* NewCostViewController.xib in Resources */,
+				E1DCEF1217F440D500271C6A /* type_left.png in Resources */,
 				E18342BB17F2737B00E319B3 /* Localizable.strings in Resources */,
+				E1DCEF0F17F440D500271C6A /* t_press.png in Resources */,
+				E1DCEF1117F440D500271C6A /* type_left_press.png in Resources */,
+				E1DCEF0C17F440D500271C6A /* add.png in Resources */,
+				E1DCEF0D17F440D500271C6A /* back.png in Resources */,
 				E18342B217F26AE500E319B3 /* MainViewController.xib in Resources */,
 				E183429017F26A0900E319B3 /* Images.xcassets in Resources */,
 			);
@@ -196,9 +284,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1DCEEF917F3E8F100271C6A /* Cost.m in Sources */,
 				E183428B17F26A0900E319B3 /* AppDelegate.m in Sources */,
 				E183428E17F26A0900E319B3 /* DailyCost.xcdatamodeld in Sources */,
+				E1DCEF0017F41CAF00271C6A /* SqliteHelper.m in Sources */,
+				E1DCEEFC17F40F5D00271C6A /* UUID.m in Sources */,
 				E183428717F26A0900E319B3 /* main.m in Sources */,
+				E18342CA17F28E9E00E319B3 /* NewCostViewController.m in Sources */,
 				E18342B117F26AE500E319B3 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +438,7 @@
 				E18342A917F26A0900E319B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

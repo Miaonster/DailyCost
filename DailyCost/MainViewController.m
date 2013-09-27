@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "GlobalDefine.h"
+#import "NewCostViewController.h"
 
 @implementation MainViewController
 
@@ -21,21 +22,35 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
+    // 初始化SqliteHelper
+    _sqliteHelper = [[SqliteHelper alloc] init];
+    [_sqliteHelper open];
+    
     // 设置标题
     _titleLabel.text = NSLocalizedString(@"MainTitle", nil);
     
     // 设置收入支出标签文本
     _incomeLabel.text = NSLocalizedString(@"IncomeLabel", nil);
     _expenseLabel.text = NSLocalizedString(@"ExpenseLabel", nil);
-    
-    
-    
-    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
+
+
+
+#pragma mark - Button Click
+
+
+// 创建新Cost的按钮点击
+- (void)newCostClick:(id)sender {
+    NewCostViewController *ncvc = [[NewCostViewController alloc] initWithNibName:@"NewCostViewController" bundle:nil];
+    [self.navigationController pushViewController:ncvc animated:YES];
+}
+
 
 @end
