@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import "Cost.h"
 
 #define DATABASE_VERSION_TABLE_NAME @"database_version_table"
 #define DATABASE_VERSION 1
@@ -25,5 +26,17 @@
 - (void)close;
 
 - (void)initTables;
+
+
+
+
+// 添加一个新Cost
+- (BOOL)insertCost:(Cost *)cost;
+
+
+
+// 获得本月所有Cost，按时间倒序排列
+- (NSArray *)currentMonthAllCosts;
+
 
 @end

@@ -6,8 +6,10 @@
 //  Copyright (c) 2013年 ChuanliangShang. All rights reserved.
 //
 
+#include <math.h>
 #import "NewCostViewController.h"
 #import "GlobalDefine.h"
+#import "SqliteHelper.h"
 
 @implementation NewCostViewController
 
@@ -68,9 +70,86 @@
 
 #pragma mark - Model
 
-// 根据Input分析出Cost
-- (void)analysis {
+// Cost输入文本-点击软键盘完成按钮
+- (void)inputFieldDoneClick:(id)sender {
     
+    // 分析出Cost
+    BOOL success = [self analysis];
+    if (success) {
+        
+        // DEBUG
+        if (_DEBUG) NSLog(@"Cost Date=%lld, Money=%ld", _cost.date, _cost.money);
+        
+        // 将Cost保存到数据库中
+        SqliteHelper *helper = [[SqliteHelper alloc] init];
+        [helper open];
+        success = [helper insertCost:_cost];
+        [helper close];
+        
+        if (success) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            
+        }
+        
+    } else {
+        
+    }
+}
+
+
+// 根据Input分析出Cost
+- (BOOL)analysis {
+    NSString *content = [_inputField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    if (content.length > 0) {
+        
+        // analysis T
+        NSString *t = @"";
+        if (content.length > 1) {
+            unichar fc = [content characterAtIndex:0];
+            if (fc == '#') {
+                NSRange end = [content rangeOfString:@" "];
+                NSRange range = NSMakeRange(0, end.length == 0 ? content.length : (end.location + end.length));
+                t = [[content substringWithRange:range] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            }
+        }
+        
+        // DEBUG
+        if (_DEBUG) NSLog(@"Analysis Cost t = %@", t);
+        
+        // analysis Money
+        NSString *money = @"";
+        unichar cs[content.length];
+        [content getCharacters:cs];
+        int decStart = -1;
+        int decEnd = -1;
+        BOOL can = YES;
+        for (int i = 0; can && i < content.length; ++i) {
+            unichar c = cs[i];
+            if(c >= '0' && c <= '9') {
+                if(decStart == -1) decStart = i;
+                if(decStart != -1) decEnd = i + 1;
+                can = true;
+            } else if(c == '.') {
+                can = true;
+            } else {
+                can = decStart == -1;
+            }
+        }
+        if (decStart != -1 && decEnd != -1) {
+            NSRange range = NSMakeRange(decStart, decEnd - decStart);
+            money = [content substringWithRange:range];
+        }
+        if (money.length > 0) {
+            double dMoney = money.doubleValue;
+            long lMoney = (long) round(dMoney * 100);
+            _cost.t = t;
+            _cost.money = lMoney;
+            _cost.content = content;
+            return YES;
+        }
+    }
+    return NO;
 }
 
 

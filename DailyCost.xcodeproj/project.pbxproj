@@ -34,6 +34,9 @@
 		E1DCEF1217F440D500271C6A /* type_left.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0917F440D500271C6A /* type_left.png */; };
 		E1DCEF1317F440D500271C6A /* type_right_press.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0A17F440D500271C6A /* type_right_press.png */; };
 		E1DCEF1417F440D500271C6A /* type_right.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF0B17F440D500271C6A /* type_right.png */; };
+		E1DCEF1617F584A700271C6A /* cost_item_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF1517F584A700271C6A /* cost_item_bg.png */; };
+		E1DCEF1817F589F200271C6A /* CostItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF1717F589F200271C6A /* CostItemView.xib */; };
+		E1DCEF1A17F58B3800271C6A /* add_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = E1DCEF1917F58B3800271C6A /* add_mask.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +80,9 @@
 		E1DCEF0917F440D500271C6A /* type_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_left.png; sourceTree = "<group>"; };
 		E1DCEF0A17F440D500271C6A /* type_right_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_right_press.png; sourceTree = "<group>"; };
 		E1DCEF0B17F440D500271C6A /* type_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = type_right.png; sourceTree = "<group>"; };
+		E1DCEF1517F584A700271C6A /* cost_item_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cost_item_bg.png; sourceTree = "<group>"; };
+		E1DCEF1717F589F200271C6A /* CostItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CostItemView.xib; sourceTree = "<group>"; };
+		E1DCEF1917F58B3800271C6A /* add_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_mask.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,7 @@
 				E18342C717F28E9E00E319B3 /* NewCostViewController.h */,
 				E18342C817F28E9E00E319B3 /* NewCostViewController.m */,
 				E18342C917F28E9E00E319B3 /* NewCostViewController.xib */,
+				E1DCEF1717F589F200271C6A /* CostItemView.xib */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -170,6 +177,8 @@
 		E18342C417F289CB00E319B3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E1DCEF1917F58B3800271C6A /* add_mask.png */,
+				E1DCEF1517F584A700271C6A /* cost_item_bg.png */,
 				E1DCEF0317F440D500271C6A /* add.png */,
 				E1DCEF0417F440D500271C6A /* back.png */,
 				E1DCEF0517F440D500271C6A /* complete.png */,
@@ -264,14 +273,17 @@
 				E1DCEF1017F440D500271C6A /* t.png in Resources */,
 				E1DCEF1417F440D500271C6A /* type_right.png in Resources */,
 				E1DCEF0E17F440D500271C6A /* complete.png in Resources */,
+				E1DCEF1817F589F200271C6A /* CostItemView.xib in Resources */,
 				E183428517F26A0900E319B3 /* InfoPlist.strings in Resources */,
 				E18342CB17F28E9E00E319B3 /* NewCostViewController.xib in Resources */,
+				E1DCEF1617F584A700271C6A /* cost_item_bg.png in Resources */,
 				E1DCEF1217F440D500271C6A /* type_left.png in Resources */,
 				E18342BB17F2737B00E319B3 /* Localizable.strings in Resources */,
 				E1DCEF0F17F440D500271C6A /* t_press.png in Resources */,
 				E1DCEF1117F440D500271C6A /* type_left_press.png in Resources */,
 				E1DCEF0C17F440D500271C6A /* add.png in Resources */,
 				E1DCEF0D17F440D500271C6A /* back.png in Resources */,
+				E1DCEF1A17F58B3800271C6A /* add_mask.png in Resources */,
 				E18342B217F26AE500E319B3 /* MainViewController.xib in Resources */,
 				E183429017F26A0900E319B3 /* Images.xcassets in Resources */,
 			);

@@ -9,11 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "SqliteHelper.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 
 // SqliteHelper
 @property(nonatomic, strong, readonly) SqliteHelper *sqliteHelper;
+
+
+
+// Cost List Data
+@property(nonatomic, strong, readonly) NSMutableArray *costs;
 
 
 
@@ -26,6 +31,20 @@
 @property(nonatomic, strong) IBOutlet UILabel *expenseLabel;
 @property(nonatomic, strong) IBOutlet UILabel *incomeSum;
 @property(nonatomic, strong) IBOutlet UILabel *expenseSum;
+
+
+// Cost List
+@property(nonatomic, strong) IBOutlet UITableView *costTableView;
+@property(nonatomic, strong) IBOutlet UIView *costTableHeaderView;
+@property(nonatomic, strong, readonly) UIImage *costItemBackgroundImage;
+
+
+
+
+
+
+// 从数据库中获得所有本月的Cost
+- (void)updateCurrentMonthAllCosts;
 
 
 

@@ -40,7 +40,12 @@
 
 
 // 根据Input分析出Cost
-- (void)analysis;
+- (BOOL)analysis;
+
+
+
+// Cost输入文本-点击软键盘完成按钮
+- (IBAction)inputFieldDoneClick:(id)sender;
 
 
 
