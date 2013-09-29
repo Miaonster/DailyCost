@@ -14,6 +14,8 @@
 		E1025FBF17F7C5A400400F2C /* point_income@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1025FBB17F7C5A400400F2C /* point_income@2x.png */; };
 		E1025FC217F7FCB700400F2C /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = E1025FC017F7FCB700400F2C /* delete.png */; };
 		E1025FC317F7FCB700400F2C /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1025FC117F7FCB700400F2C /* delete@2x.png */; };
+		E1025FC617F81C9A00400F2C /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = E1025FC417F81C9A00400F2C /* time.png */; };
+		E1025FC717F81C9A00400F2C /* time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1025FC517F81C9A00400F2C /* time@2x.png */; };
 		E183427917F26A0900E319B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E183427817F26A0900E319B3 /* Foundation.framework */; };
 		E183427B17F26A0900E319B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E183427A17F26A0900E319B3 /* CoreGraphics.framework */; };
 		E183427D17F26A0900E319B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E183427C17F26A0900E319B3 /* UIKit.framework */; };
@@ -69,6 +71,8 @@
 		E1025FBB17F7C5A400400F2C /* point_income@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "point_income@2x.png"; sourceTree = "<group>"; };
 		E1025FC017F7FCB700400F2C /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		E1025FC117F7FCB700400F2C /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
+		E1025FC417F81C9A00400F2C /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time.png; sourceTree = "<group>"; };
+		E1025FC517F81C9A00400F2C /* time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time@2x.png"; sourceTree = "<group>"; };
 		E183427517F26A0900E319B3 /* DailyCost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyCost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E183427817F26A0900E319B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E183427A17F26A0900E319B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -221,6 +225,8 @@
 		E18342C417F289CB00E319B3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E1025FC417F81C9A00400F2C /* time.png */,
+				E1025FC517F81C9A00400F2C /* time@2x.png */,
 				E1025FC017F7FCB700400F2C /* delete.png */,
 				E1025FC117F7FCB700400F2C /* delete@2x.png */,
 				E1025FB817F7C5A400400F2C /* point_expense.png */,
@@ -350,6 +356,7 @@
 				E19938F617F67E9F008A345F /* t_press.png in Resources */,
 				E19938F817F67E9F008A345F /* type_left_press.png in Resources */,
 				E1D7124117F5C5B000BD9F3A /* type_right@2x.png in Resources */,
+				E1025FC617F81C9A00400F2C /* time.png in Resources */,
 				E1025FBE17F7C5A400400F2C /* point_income.png in Resources */,
 				E19938FA17F67E9F008A345F /* type_right_press.png in Resources */,
 				E19938F217F67E9F008A345F /* add.png in Resources */,
@@ -362,6 +369,7 @@
 				E199390717F70D3A008A345F /* edit@2x.png in Resources */,
 				E1D7123B17F5C5B000BD9F3A /* complete@2x.png in Resources */,
 				E1D7123F17F5C5B000BD9F3A /* type_left@2x.png in Resources */,
+				E1025FC717F81C9A00400F2C /* time@2x.png in Resources */,
 				E1D7123A17F5C5B000BD9F3A /* back@2x.png in Resources */,
 				E199390617F70D3A008A345F /* edit.png in Resources */,
 				E18342B217F26AE500E319B3 /* MainViewController.xib in Resources */,

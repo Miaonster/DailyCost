@@ -7,8 +7,8 @@
 */
 
 "MainTitle"          = "本月账单";
-"IncomeLabel"        = "总收入";
-"ExpenseLabel"       = "总支出";
+"IncomeLabel"        = "总收入(￥)";
+"ExpenseLabel"       = "总支出(￥)";
 
 "NewCostTitle"       = "一条新账目";
 "NewIncomeTitle"     = "一条新收入";

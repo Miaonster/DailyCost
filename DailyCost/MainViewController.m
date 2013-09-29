@@ -86,8 +86,8 @@
                 break;
         }
     }
-    _incomeSum.text = [NSString stringWithFormat:@"￥%0.2f", income / 100.0];
-    _expenseSum.text = [NSString stringWithFormat:@"￥%0.2f", expense / 100.0];
+    _incomeSum.text = [NSString stringWithFormat:@"%0.2f", income / 100.0];
+    _expenseSum.text = [NSString stringWithFormat:@"%0.2f", expense / 100.0];
 }
 
 
@@ -141,7 +141,7 @@
     
     // Money Lable
     UILabel *money = (UILabel *) [cell viewWithTag:101];
-    money.text = [NSString stringWithFormat:@"￥%0.2f", cost.money / 100.0];
+    money.text = [NSString stringWithFormat:@"%0.2f", cost.money / 100.0];
     money.textColor = cost.type == CostType_Income ? CostMoneyColor_Income : cost.type == CostType_Expense ? CostMoneyColor_Expense : CostMoneyColor_None;
     
     // Content Label
@@ -170,13 +170,26 @@
     [edit setTitle:[NSString stringWithFormat:@"%d", indexPath.row] forState:UIControlStateNormal];
     [edit addTarget:self action:@selector(costEditClick:) forControlEvents:UIControlEventTouchUpInside];
     
+    // Date Label
+    UILabel *date = (UILabel *) [cell viewWithTag:105];
+    NSString *sDate = [NSString stringWithFormat:@"%lld", cost.date];
+    date.text = [NSString stringWithFormat:@"%@/%@ %@:%@",
+                 [sDate substringWithRange:NSMakeRange(4, 2)],
+                 [sDate substringWithRange:NSMakeRange(6, 2)],
+                 [sDate substringWithRange:NSMakeRange(8, 2)],
+                 [sDate substringWithRange:NSMakeRange(10, 2)]];
+    
+    // ￥Label
+    UILabel *mLabel = (UILabel *) [cell viewWithTag:106];
+    mLabel.textColor = money.textColor;
+    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     Cost *cost = [_costs objectAtIndex:indexPath.row];
     UIFont *cellFont = [UIFont systemFontOfSize:17];
-    CGSize constraintSize = CGSizeMake(225.0f, MAXFLOAT);
+    CGSize constraintSize = CGSizeMake(265.0f, MAXFLOAT);
     CGSize labelSize = [cost.content sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
     return labelSize.height + 110;
 }

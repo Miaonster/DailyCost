@@ -7,8 +7,8 @@
 */
 
 "MainTitle"          = "This Month Cost";
-"IncomeLabel"        = "Income";
-"ExpenseLabel"       = "Expense";
+"IncomeLabel"        = "Income(￥)";
+"ExpenseLabel"       = "Expense(￥)";
 
 "NewCostTitle"       = "The New Cost";
 "NewIncomeTitle"     = "The New Income";
