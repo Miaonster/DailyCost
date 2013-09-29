@@ -116,7 +116,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     // 默认在页面显示完成后打开软键盘
-    [_inputField becomeFirstResponder];
+    if (!_isEdit) [_inputField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -132,69 +132,30 @@
 
 // Cost输入文本-输入改变
 - (void)inputFieldChanged:(id)sender {
-    
-    // 联想出已存在的T
-    // 打开数据库
-    SqliteHelper *helper = [[SqliteHelper alloc] init];
-    [helper open];
-    
-    [_tags removeAllObjects];
-    [_tags addObjectsFromArray:[helper allTagsWithStartString:_inputField.text]];
-    
-    // 关闭数据库
-    [helper close];
-    
-    // 刷新TTable
-    [_tagTableView reloadData];
-    
-    // 检查是否需要显示TTable
-    _tagTableView.alpha = _tags.count > 0 ? 0.9 : 0;
-}
-
-// Cost输入文本-点击软键盘完成按钮
-- (void)inputFieldDoneClick:(id)sender {
-    
-    // 在编辑状态下记录下之前Cost的UUID和日期
-    NSString *oldUUID = _cost.uuid;
-    long long oldDate = _cost.date;
-    
-    // 分析出Cost
-    BOOL success = [self analysis];
-    if (success) {
+    if (!_isEdit) {
         
-        // DEBUG
-        if (_DEBUG) NSLog(@"Cost Date=%lld, Money=%ld", _cost.date, _cost.money);
-        
+        // 联想出已存在的T
         // 打开数据库
         SqliteHelper *helper = [[SqliteHelper alloc] init];
         [helper open];
         
-        // 将T保存到数据库中
-        if (_cost.tag.length > 0) {
-            Tag *t = [[Tag alloc] init];
-            t.name = _cost.tag;
-            [helper insertTag:t];
-        }
-        
-        // 将Cost保存到数据库中
-        if (_isEdit) {
-            _cost.date = oldDate;
-            success = [helper updateCost:_cost withUUID:oldUUID];
-        } else {
-            success = [helper insertCost:_cost];
-        }
+        [_tags removeAllObjects];
+        [_tags addObjectsFromArray:[helper allTagsWithStartString:_inputField.text]];
         
         // 关闭数据库
         [helper close];
         
-        if (success) {
-            [self.navigationController popViewControllerAnimated:YES];
-        } else {
-            
-        }
-    } else {
+        // 刷新TTable
+        [_tagTableView reloadData];
         
+        // 检查是否需要显示TTable
+        _tagTableView.alpha = _tags.count > 0 ? 0.9 : 0;
     }
+}
+
+// Cost输入文本-点击软键盘完成按钮
+- (void)inputFieldDoneClick:(id)sender {
+    if (!_isEdit) [self completeClick:nil];
 }
 
 
@@ -297,6 +258,9 @@
     }
     _inputField.text = content;
     if (!_isEdit) [self inputFieldChanged:nil];
+    
+    // 完成后打开软键盘
+    if (!_isEdit) [_inputField becomeFirstResponder];
 }
 
 // Income Type按钮点击
@@ -348,6 +312,52 @@
     [alert show];
 }
 
+// Complete 按钮点击
+- (void)completeClick:(id)sender {
+    
+    // 在编辑状态下记录下之前Cost的UUID和日期
+    NSString *oldUUID = _cost.uuid;
+    long long oldDate = _cost.date;
+    
+    // 分析出Cost
+    BOOL success = [self analysis];
+    if (success) {
+        
+        // DEBUG
+        if (_DEBUG) NSLog(@"Cost Date=%lld, Money=%ld", _cost.date, _cost.money);
+        
+        // 打开数据库
+        SqliteHelper *helper = [[SqliteHelper alloc] init];
+        [helper open];
+        
+        // 将T保存到数据库中
+        if (_cost.tag.length > 0) {
+            Tag *t = [[Tag alloc] init];
+            t.name = _cost.tag;
+            [helper insertTag:t];
+        }
+        
+        // 将Cost保存到数据库中
+        if (_isEdit) {
+            _cost.date = oldDate;
+            success = [helper updateCost:_cost withUUID:oldUUID];
+        } else {
+            success = [helper insertCost:_cost];
+        }
+        
+        // 关闭数据库
+        [helper close];
+        
+        if (success) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            
+        }
+    } else {
+        
+    }
+}
+
 
 
 
@@ -383,6 +393,9 @@
     NSString *st = ((Tag *) [_tags objectAtIndex:indexPath.row]).name;
     _inputField.text = [NSString stringWithFormat:@"%@ ", st];
     if (!_isEdit) [self inputFieldChanged:nil];
+    
+    // 完成后打开软键盘
+    if (!_isEdit) [_inputField becomeFirstResponder];
 }
 
 

@@ -89,5 +89,8 @@
 // Delete Cost 按钮点击
 - (IBAction)deleteCostClick:(id)sender;
 
+// Complete 按钮点击
+- (IBAction)completeClick:(id)sender;
+
 
 @end
