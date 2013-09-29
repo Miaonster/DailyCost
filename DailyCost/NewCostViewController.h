@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Cost.h"
 
-@interface NewCostViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface NewCostViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 - (id)initWithEditCost:(Cost *)ec;
 

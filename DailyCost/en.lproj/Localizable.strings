@@ -18,3 +18,8 @@
 "NewCostExpenseType"       = "Expense";
 "NewCostEditCostTitle"     = "Edit Cost";
 "NewCostDeleteCost"        = "Delete";
+
+"DeleteAlertTitle"         = "Delete";
+"DeleteAlertMessage"       = "Delete ?";
+"DeleteAlertDeleteButton"  = "Delete";
+"DeleteAlertCancelButton"  = "Cancel";

@@ -18,3 +18,8 @@
 "NewCostExpenseType"       = "支出";
 "NewCostEditCostTitle"     = "修改账目";
 "NewCostDeleteCost"        = "删除此账目";
+
+"DeleteAlertTitle"         = "删除";
+"DeleteAlertMessage"       = "请确认删除此账目";
+"DeleteAlertDeleteButton"  = "删除";
+"DeleteAlertCancelButton"  = "取消";

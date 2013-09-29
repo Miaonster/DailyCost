@@ -341,23 +341,11 @@
 
 // Delete Cost 按钮点击
 - (void)deleteCostClick:(id)sender {
-    BOOL success = NO;
     
-    // 打开数据库
-    SqliteHelper *helper = [[SqliteHelper alloc] init];
-    [helper open];
-    
-    // 将Cost从数据库中删除
-    success = [helper deleteCost:_cost.uuid];
-    
-    // 关闭数据库
-    [helper close];
-    
-    if (success) {
-        [self.navigationController popViewControllerAnimated:YES];
-    } else {
-        
-    }
+    // 确认框
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"DeleteAlertTitle", nil) message:NSLocalizedString(@"DeleteAlertMessage", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"DeleteAlertCancelButton", nil) otherButtonTitles:NSLocalizedString(@"DeleteAlertDeleteButton", nil), nil];
+    alert.delegate = self;
+    [alert show];
 }
 
 
@@ -395,6 +383,33 @@
     NSString *st = ((Tag *) [_tags objectAtIndex:indexPath.row]).name;
     _inputField.text = [NSString stringWithFormat:@"%@ ", st];
     if (!_isEdit) [self inputFieldChanged:nil];
+}
+
+
+
+
+#pragma mark - UIAlertView Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        BOOL success = NO;
+        
+        // 打开数据库
+        SqliteHelper *helper = [[SqliteHelper alloc] init];
+        [helper open];
+        
+        // 将Cost从数据库中删除
+        success = [helper deleteCost:_cost.uuid];
+        
+        // 关闭数据库
+        [helper close];
+        
+        if (success) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            
+        }
+    }
 }
 
 @end
