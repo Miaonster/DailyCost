@@ -11,11 +11,13 @@
 
 @interface Cost : NSObject
 
+- (id)initWithCost:(Cost *)c;
+
 - (id)initWithSqlite3Stmt:(sqlite3_stmt *) stmt;
 
 @property(nonatomic, strong, readonly) NSString  *uuid;
 @property(nonatomic)                   NSInteger type;
-@property(nonatomic, strong)           NSString  *t;
+@property(nonatomic, strong)           NSString  *tag;
 @property(nonatomic, strong)           NSString  *content;
 @property(nonatomic)                   long      money;
 @property(nonatomic)                   long long date;

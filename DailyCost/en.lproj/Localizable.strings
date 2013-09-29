@@ -16,3 +16,5 @@
 "NewCostPlaceholder" = "#Family Movies 389";
 "NewCostIncomeType"        = "Income";
 "NewCostExpenseType"       = "Expense";
+"NewCostEditCostTitle"     = "Edit Cost";
+"NewCostDeleteCost"        = "Delete";

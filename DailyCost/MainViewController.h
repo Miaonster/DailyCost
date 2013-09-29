@@ -37,6 +37,8 @@
 @property(nonatomic, strong) IBOutlet UITableView *costTableView;
 @property(nonatomic, strong) IBOutlet UIView *costTableHeaderView;
 @property(nonatomic, strong, readonly) UIImage *costItemBackgroundImage;
+@property(nonatomic, strong, readonly) UIImage *costTypeIncomePointImage;
+@property(nonatomic, strong, readonly) UIImage *costTypeExpensePointImage;
 
 
 
@@ -51,6 +53,12 @@
 
 // 创建新Cost的按钮点击
 - (IBAction)newCostClick:(id)sender;
+
+
+
+
+// CostItemEdit按钮点击
+- (void)costEditClick:(id)sender;
 
 
 @end

@@ -26,6 +26,19 @@
     return self;
 }
 
+- (id)initWithCost:(Cost *)c {
+    self = [self init];
+    if (self && c) {
+        _uuid = c.uuid;
+        _type = c.type;
+        _tag = c.tag;
+        _content = c.content;
+        _money = c.money;
+        _date = c.date;
+    }
+    return self;
+}
+
 
 // 0:uuid TEXT
 // 1:type INTEGER
@@ -38,7 +51,7 @@
     if (self && stmt) {
         _uuid = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 0)];
         _type = sqlite3_column_int(stmt, 1);
-        _t = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 2)];
+        _tag = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 2)];
         _content = [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 3)];
         _money = (long) sqlite3_column_int64(stmt, 4);
         _date = sqlite3_column_int64(stmt, 5);

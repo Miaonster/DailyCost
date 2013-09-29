@@ -27,9 +27,11 @@
     if (sqlite3_open([path UTF8String], &database) == SQLITE_OK) {
         
         // DEBUG
-        if (_DEBUG) NSLog(@"Database Open Successful and Path = %@", path);
+//        if (_DEBUG) NSLog(@"Database Open Successful and Path = %@", path);
         
         [self initTables];
+        
+        databaseIsOK = YES;
         
     } else {
         
@@ -79,19 +81,76 @@
 - (void)initTables {
     char *errorMsg;
     
+    
+    // Database Version Table
     NSString *sql = [NSString stringWithFormat:
-                     @"CREATE TABLE IF NOT EXISTS %@ (version INTEGER DEFAULT 1);", 
+                     @"CREATE TABLE IF NOT EXISTS %@ (version INTEGER DEFAULT 1);",
                      DATABASE_VERSION_TABLE_NAME];
     sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg);
     
+    
+    // Cost Tag Table
     sql = [NSString stringWithFormat:
-           @"CREATE TABLE IF NOT EXISTS %@ (uuid TEXT, type INTEGER, t TEXT, content TEXT, money long, date long long);",
+           @"CREATE TABLE IF NOT EXISTS %@ (uuid TEXT, name TEXT PRIMARY KEY, count long);",
+           COST_TAG_TABLE_NAME];
+    sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg);
+    
+    
+    // Cost Table
+    sql = [NSString stringWithFormat:
+           @"CREATE TABLE IF NOT EXISTS %@ (uuid TEXT, type INTEGER, tag TEXT, content TEXT, money long, date long long);",
            COST_TABLE_NAME];
-    if (sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK) {
-        databaseIsOK = NO;
-    } else {
-        databaseIsOK = YES;
+    sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg);
+}
+
+
+
+
+
+
+
+
+// 添加一个新Tag
+- (BOOL)insertTag:(Tag *)t {
+    if (databaseIsOK && t) {
+        NSString *sql = [NSString stringWithFormat:
+                         @"INSERT INTO %@ VALUES ('%@','%@', %ld);",
+                         COST_TAG_TABLE_NAME,
+                         t.uuid, t.name, t.count];
+        char *errorMsg;
+        if (sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK) {
+            
+            // DEBUG
+            if (_DEBUG) NSLog(@"Table(%@) Insert New Tag Successful", COST_TAG_TABLE_NAME);
+            
+            return YES;
+        } else {
+            
+            // DEBUG
+            if (_DEBUG) NSLog(@"Table(%@) Insert New Tag Failed and Error = %@", COST_TAG_TABLE_NAME, [NSString stringWithCString:errorMsg encoding:NSUTF8StringEncoding]);
+        }
     }
+    return NO;
+}
+
+
+// 获得所有Tags
+- (NSArray *)allTagsWithStartString:(NSString *)start {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    if (databaseIsOK && start.length > 0 && [start characterAtIndex:0] == '#') {
+        sqlite3_stmt *statement;
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE %@ ORDER BY count DESC;",
+                         COST_TAG_TABLE_NAME,
+                         [NSString stringWithFormat:@"name LIKE '%@%%'", start]];
+        if (sqlite3_prepare_v2(database, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                Tag *t = [[Tag alloc] initWithSqlite3Stmt:statement];
+                [array addObject:t];
+            }
+            sqlite3_finalize(statement);
+        }
+    }
+    return array;
 }
 
 
@@ -108,18 +167,42 @@
         NSString *sql = [NSString stringWithFormat:
                          @"INSERT INTO %@ VALUES ('%@', %d, '%@', '%@', %ld, %lld);",
                          COST_TABLE_NAME,
-                         cost.uuid, cost.type, cost.t, cost.content, cost.money, cost.date];
+                         cost.uuid, cost.type, cost.tag, cost.content, cost.money, cost.date];
         char *errorMsg;
         if (sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK) {
             
             // DEBUG
-            if (_DEBUG) NSLog(@"Table(%@) InsertNewNote Successful", COST_TABLE_NAME);
+            if (_DEBUG) NSLog(@"Table(%@) Insert New Cost Successful", COST_TABLE_NAME);
             
             return YES;
         } else {
             
             // DEBUG
-            if (_DEBUG) NSLog(@"Table(%@) InsertNewNote Failed and Error = %@", COST_TABLE_NAME, [NSString stringWithCString:errorMsg encoding:NSUTF8StringEncoding]);
+            if (_DEBUG) NSLog(@"Table(%@) Insert New Cost Failed and Error = %@", COST_TABLE_NAME, [NSString stringWithCString:errorMsg encoding:NSUTF8StringEncoding]);
+        }
+    }
+    return NO;
+}
+
+// 根据Cost UUID更新
+- (BOOL)updateCost:(Cost *)cost withUUID:(NSString *)uuid {
+    if (databaseIsOK && cost) {
+        NSString *sql = [NSString stringWithFormat:
+                         @"UPDATE %@ SET uuid='%@', type=%d, tag='%@', content='%@', money=%ld, date=%lld WHERE uuid='%@';",
+                         COST_TABLE_NAME,
+                         cost.uuid, cost.type, cost.tag, cost.content, cost.money, cost.date,
+                         uuid];
+        char *errorMsg;
+        if (sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK) {
+            
+            // DEBUG
+            if (_DEBUG) NSLog(@"Table(%@) Update Cost Successful", COST_TABLE_NAME);
+            
+            return YES;
+        } else {
+            
+            // DEBUG
+            if (_DEBUG) NSLog(@"Table(%@) Update Cost Failed and Error = %@", COST_TABLE_NAME, [NSString stringWithCString:errorMsg encoding:NSUTF8StringEncoding]);
         }
     }
     return NO;
@@ -131,7 +214,7 @@
     NSMutableArray *array = [[NSMutableArray alloc] init];
     if (databaseIsOK) {
         sqlite3_stmt *statement;
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@;", COST_TABLE_NAME];
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ ORDER BY date DESC;", COST_TABLE_NAME];
         if (sqlite3_prepare_v2(database, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 Cost *cost = [[Cost alloc] initWithSqlite3Stmt:statement];
@@ -141,6 +224,29 @@
         }
     }
     return array;
+}
+
+// 根据Cost UUID删除
+- (BOOL)deleteCost:(NSString *)uuid {
+    if (databaseIsOK) {
+        NSString *sql = [NSString stringWithFormat:
+                         @"DELETE FROM %@ WHERE uuid='%@';",
+                         COST_TABLE_NAME,
+                         uuid];
+        char *errorMsg;
+        if (sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK) {
+            
+            // DEBUG
+            if (_DEBUG) NSLog(@"Table(%@) Delete Cost Successful", COST_TABLE_NAME);
+            
+            return YES;
+        } else {
+            
+            // DEBUG
+            if (_DEBUG) NSLog(@"Table(%@) Delete Failed and Error = %@", COST_TABLE_NAME, [NSString stringWithCString:errorMsg encoding:NSUTF8StringEncoding]);
+        }
+    }
+    return NO;
 }
 
 

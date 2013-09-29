@@ -16,3 +16,5 @@
 "NewCostPlaceholder" = "#给孩子买玩具 68";
 "NewCostIncomeType"        = "收入";
 "NewCostExpenseType"       = "支出";
+"NewCostEditCostTitle"     = "修改账目";
+"NewCostDeleteCost"        = "删除此账目";

@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Cost.h"
 
-@interface NewCostViewController : UIViewController
+@interface NewCostViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+- (id)initWithEditCost:(Cost *)ec;
 
 
 // Cost Object
 @property(nonatomic, strong, readonly) Cost *cost;
+@property(nonatomic, readonly) BOOL isEdit;
 
 
 // 标题
@@ -36,6 +39,24 @@
 @property(nonatomic, strong, readonly) UIImage *typeExpenseSelectedImage;
 @property(nonatomic, strong) IBOutlet UIButton *typeExpenseButton;
 
+// Tag Table
+@property(nonatomic, strong) IBOutlet UITableView *tagTableView;
+@property(nonatomic, readonly) CGRect tagTableInitRect;
+@property(nonatomic, strong) NSMutableArray *tags;
+
+// Delete
+@property(nonatomic, strong) IBOutlet UIView *deleteRootView;
+@property(nonatomic, strong) IBOutlet UIButton *deleteCostButton;
+@property(nonatomic, strong, readonly) UIImage *deleteCostButtonImage;
+
+
+
+
+
+// 软键盘打开关闭监听
+- (void)inputMethodShow:(NSNotification *)notification;
+- (void)inputMethodHide:(NSNotification *)notification;
+
 
 
 
@@ -43,6 +64,9 @@
 - (BOOL)analysis;
 
 
+
+// Cost输入文本-输入改变
+- (IBAction)inputFieldChanged:(id)sender;
 
 // Cost输入文本-点击软键盘完成按钮
 - (IBAction)inputFieldDoneClick:(id)sender;
@@ -61,6 +85,9 @@
 
 // Expense Type按钮点击
 - (IBAction)typeExpenseClick:(id)sender;
+
+// Delete Cost 按钮点击
+- (IBAction)deleteCostClick:(id)sender;
 
 
 @end
