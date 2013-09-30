@@ -170,8 +170,8 @@
             unichar fc = [content characterAtIndex:0];
             if (fc == '#') {
                 NSRange end = [content rangeOfString:@" "];
-                NSRange range = NSMakeRange(0, end.length == 0 ? content.length : (end.location + end.length));
-                tag = [[content substringWithRange:range] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                NSRange range = NSMakeRange(0, end.length == 0 ? content.length : (end.location + end.length - 1));
+                tag = [content substringWithRange:range];
             }
         }
         

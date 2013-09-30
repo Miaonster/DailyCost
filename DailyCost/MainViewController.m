@@ -9,7 +9,6 @@
 #import "MainViewController.h"
 #import "GlobalDefine.h"
 #import "NewCostViewController.h"
-#import "UITagLabel.h"
 
 @implementation MainViewController
 
@@ -28,6 +27,7 @@
     // 初始化SqliteHelper
     _sqliteHelper = [[SqliteHelper alloc] init];
     _costs = [[NSMutableArray alloc] init];
+    _costContentHeightDic = [[NSDictionary alloc] init];
     
     // 设置标题
     _titleLabel.text = NSLocalizedString(@"MainTitle", nil);
@@ -115,14 +115,6 @@
 
 #pragma mark - UITableView Delegate
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    return nil;
-//}
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return 1;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _costs.count;
 }
@@ -147,19 +139,10 @@
     // Content Label
     UITagLabel *content = (UITagLabel *) [cell viewWithTag:102];
     [content inits];
-//    content.delegate = self;
+    content.delegate = self;
     content.text = cost.content;
-    
-//    CGSize constraintSize = CGSizeMake(240.0f, MAXFLOAT);
-//    CGSize labelHeight = [cost.content sizeWithFont:content.font];
-//    CGSize labelSize = [cost.content sizeWithFont:content.font constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-//    content.numberOfLines = ceil(labelSize.height / labelHeight.height);
-    
-//    NSDictionary *attributes = content.font.fontDescriptor.fontAttributes;
-//    
-//    CGSize titleBrandSizeForHeight = [content.text sizeWithAttributes:attributes];
-//    CGSize titleBrandSizeForLines = [content.text sizeWithFont:content.font constrainedToSize:CGSizeMake(content.frame.size.width, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
-//    content.numberOfLines = ceil(titleBrandSizeForLines.height / titleBrandSizeForHeight.height);
+//    content.backgroundColor = [UIColor lightGrayColor];
+//    [content sizeToFit];
     
     // Cost Type Point
     UIImageView *point = (UIImageView *) [cell viewWithTag:103];
@@ -189,13 +172,24 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     Cost *cost = [_costs objectAtIndex:indexPath.row];
     UIFont *cellFont = [UIFont systemFontOfSize:17];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                cellFont, NSFontAttributeName,
+                                nil];
     CGSize constraintSize = CGSizeMake(265.0f, MAXFLOAT);
-    CGSize labelSize = [cost.content sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+    CGSize labelSize = [cost.content boundingRectWithSize:constraintSize options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:attributes context:nil].size;
     return labelSize.height + 110;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
+#pragma mark - UITagLabel Delegate
+
+- (void)tagLabel:(UITagLabel *)label clickedTag:(NSString *)tag {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:tag delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 

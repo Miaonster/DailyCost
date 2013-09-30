@@ -25,6 +25,11 @@
 #define CostMoneyColor_Expense    [UIColor colorWithRed:158/255.0 green:65/255.0 blue:3/225.0 alpha:1]
 
 
+// 定义TagTextColor
+#define CostTagTextColor          [UIColor colorWithRed:51/255.0 green:181/255.0 blue:229/225.0 alpha:1]
+#define CostTagTextPressColor     [UIColor colorWithRed:0/255.0 green:104/255.0 blue:138/225.0 alpha:1]
+
+
 
 
 #endif

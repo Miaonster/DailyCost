@@ -213,8 +213,12 @@
 - (NSArray *)currentMonthAllCosts {
     NSMutableArray *array = [[NSMutableArray alloc] init];
     if (databaseIsOK) {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyyMM000000"];
+        NSString *sDate = [dateFormatter stringFromDate:[NSDate date]];
+        long long date = (long long) sDate.doubleValue;
         sqlite3_stmt *statement;
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ ORDER BY date DESC;", COST_TABLE_NAME];
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE date >= %lld ORDER BY date DESC;", COST_TABLE_NAME, date];
         if (sqlite3_prepare_v2(database, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 Cost *cost = [[Cost alloc] initWithSqlite3Stmt:statement];

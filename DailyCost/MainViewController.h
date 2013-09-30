@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SqliteHelper.h"
+#import "UITagLabel.h"
 
-@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITagLabelDelegaet>
 
 
 // SqliteHelper
@@ -39,6 +40,7 @@
 @property(nonatomic, strong, readonly) UIImage *costItemBackgroundImage;
 @property(nonatomic, strong, readonly) UIImage *costTypeIncomePointImage;
 @property(nonatomic, strong, readonly) UIImage *costTypeExpensePointImage;
+@property(nonatomic, strong, readonly) NSDictionary *costContentHeightDic;
 
 
 
