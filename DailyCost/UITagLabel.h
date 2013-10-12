@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Cost.h"
 
 @class UITagLabel;
 @protocol UITagLabelDelegaet <NSObject>
 
 @required
-- (void)tagLabel:(UITagLabel *)label clickedTag:(NSString *)tag;
+- (void)tagLabel:(UITagLabel *)label clickedTag:(NSString *)tag andCost:(Cost *)cost;
 
 @end
 
@@ -26,7 +27,8 @@
 @property(nonatomic, readonly) CGRect tagMainRect;
 @property(nonatomic, readonly) CGRect tagMinorRect;
 
-- (void)inits;
+@property(nonatomic, strong, readonly) Cost *cost;
+- (void)initWithCost:(Cost *)aCost;
 
 @property(nonatomic, readonly) BOOL isPressingTag;
 - (BOOL)touchInTagRect:(CGPoint)touchPoint;

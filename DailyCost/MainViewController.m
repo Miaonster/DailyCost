@@ -9,12 +9,12 @@
 #import "MainViewController.h"
 #import "GlobalDefine.h"
 #import "NewCostViewController.h"
+#import "TagCostsViewController.h"
 
 @implementation MainViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)init {
+    self = [self initWithNibName:@"MainViewController" bundle:nil];
     if (self) {
     }
     return self;
@@ -51,7 +51,7 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     
     // 从数据库中获得所有本月的Cost
     [self updateCurrentMonthAllCosts];
@@ -101,6 +101,11 @@
     [self.navigationController pushViewController:ncvc animated:YES];
 }
 
+// 更多。。。按钮点击
+- (void)moreClick:(id)sender {
+    
+}
+
 // CostItemEdit按钮点击
 - (void)costEditClick:(id)sender {
     if ([sender isKindOfClass:UIButton.class]) {
@@ -138,11 +143,8 @@
     
     // Content Label
     UITagLabel *content = (UITagLabel *) [cell viewWithTag:102];
-    [content inits];
+    [content initWithCost:cost];
     content.delegate = self;
-    content.text = cost.content;
-//    content.backgroundColor = [UIColor lightGrayColor];
-//    [content sizeToFit];
     
     // Cost Type Point
     UIImageView *point = (UIImageView *) [cell viewWithTag:103];
@@ -187,9 +189,9 @@
 
 #pragma mark - UITagLabel Delegate
 
-- (void)tagLabel:(UITagLabel *)label clickedTag:(NSString *)tag {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:tag delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    [alert show];
+- (void)tagLabel:(UITagLabel *)label clickedTag:(NSString *)tag andCost:(Cost *)cost {
+    TagCostsViewController *tcvc = [[TagCostsViewController alloc] initWithTag:tag andType:cost.type];
+    [self.navigationController pushViewController:tcvc animated:YES];
 }
 
 

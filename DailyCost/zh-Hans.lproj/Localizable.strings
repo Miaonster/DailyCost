@@ -23,3 +23,5 @@
 "DeleteAlertMessage"       = "请确认删除此账目";
 "DeleteAlertDeleteButton"  = "删除";
 "DeleteAlertCancelButton"  = "取消";
+
+"TagCostsSumLabel"         = "总计(￥)";

@@ -15,8 +15,14 @@
 #define DATABASE_VERSION 1
 
 #define DB_NAME             @"DailyCostData.sqlite"
-#define COST_TAG_TABLE_NAME   @"cost_tag_table"
+#define COST_TAG_TABLE_NAME @"cost_tag_table"
 #define COST_TABLE_NAME     @"cost_table"
+
+
+
+#define CostPageCount       24
+
+
 
 @interface SqliteHelper : NSObject {
     sqlite3 *database;
@@ -47,11 +53,20 @@
 // 根据Cost UUID更新
 - (BOOL)updateCost:(Cost *)cost withUUID:(NSString *)uuid;
 
+// 获得所有Cost，按时间倒序排列
+- (NSArray *)allCosts;
+
+// 分页获得Cost，按时间倒序排列
+- (NSArray *)pageCostsWithOffset:(NSInteger)offset;
+
 // 获得本月所有Cost，按时间倒序排列
 - (NSArray *)currentMonthAllCosts;
 
 // 根据Cost UUID删除
 - (BOOL)deleteCost:(NSString *)uuid;
+
+// 获得所有给定Tag和Type的Costs
+- (NSArray *)allCostsWithTag:(NSString *)tag andType:(NSInteger)type;
 
 
 @end

@@ -56,6 +56,9 @@
 // 创建新Cost的按钮点击
 - (IBAction)newCostClick:(id)sender;
 
+// 更多。。。按钮点击
+- (IBAction)moreClick:(id)sender;
+
 
 
 

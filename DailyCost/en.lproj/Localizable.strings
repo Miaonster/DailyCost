@@ -23,3 +23,5 @@
 "DeleteAlertMessage"       = "Delete ?";
 "DeleteAlertDeleteButton"  = "Delete";
 "DeleteAlertCancelButton"  = "Cancel";
+
+"TagCostsSumLabel"         = "Sum(￥)";

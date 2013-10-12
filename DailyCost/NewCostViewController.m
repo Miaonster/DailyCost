@@ -49,21 +49,9 @@
     _typeNoneTextColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
     _typeSelectedTextColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
     
-    // Type Button Image
-    _typeIncomeNoneImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"type_left" ofType:@"png"]];
-    _typeIncomeSelectedImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"type_left_press" ofType:@"png"]];
-    _typeExpenseNoneImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"type_right" ofType:@"png"]];
-    _typeExpenseSelectedImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"type_right_press" ofType:@"png"]];
-    
     // 设置输入提示
     _inputField.placeholder = NSLocalizedString(@"NewCostPlaceholder", nil);
     [_inputField setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
-    
-    // 设置CostType
-    [_typeIncomeButton setTitleColor:_typeNoneTextColor forState:UIControlStateNormal];
-    [_typeExpenseButton setTitleColor:_typeSelectedTextColor forState:UIControlStateNormal];
-    [_typeIncomeButton setTitle:NSLocalizedString(@"NewCostIncomeType", nil) forState:UIControlStateNormal];
-    [_typeExpenseButton setTitle:NSLocalizedString(@"NewCostExpenseType", nil) forState:UIControlStateNormal];
     
     // 监听软键盘的显示和隐藏
     __weak id weakSelf = self;
@@ -93,12 +81,6 @@
         _titleLabel.text = NSLocalizedString(@"NewCostEditCostTitle", nil);
         // 初始显示Cost Content
         _inputField.text = _cost.content;
-        // 初始显示Cost Type
-        if (_cost.type == CostType_Income) {
-            [self typeIncomeClick:nil];
-        } else if (_cost.type == CostType_Expense) {
-            [self typeExpenseClick:nil];
-        }
     } else {
         // 初始化一个新的Cost
         _cost = [[Cost alloc] init];
@@ -106,11 +88,12 @@
         _cost.type = CostType_Expense;
         // 默认非编辑，只有调用了setEditCost后才视为编辑状态
         _isEdit = NO;
-        // 设置标题
-        _titleLabel.text = NSLocalizedString(@"NewExpenseTitle", nil);
         // 隐藏Delete
         _deleteRootView.alpha = 0;
     }
+    
+    // 初始显示Cost Type
+    [self updateTypeViewWithCostType];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -213,6 +196,26 @@
     return NO;
 }
 
+// 根据Cost的Type修改对应显示控件的属性
+- (void)updateTypeViewWithCostType {
+    if (_cost.type == CostType_Income) {
+        
+        // 设置标题
+        if (!_isEdit) _titleLabel.text = NSLocalizedString(@"NewIncomeTitle", nil);
+        
+        // 修改按钮图片
+        [_typeChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"income" ofType:@"png"]] forState:UIControlStateNormal];
+        
+    } else if (_cost.type == CostType_Expense) {
+        
+        // 设置标题
+        if (!_isEdit) _titleLabel.text = NSLocalizedString(@"NewExpenseTitle", nil);
+        
+        // 修改按钮图片
+        [_typeChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"expense" ofType:@"png"]] forState:UIControlStateNormal];
+    }
+}
+
 
 
 
@@ -263,51 +266,37 @@
     if (!_isEdit) [_inputField becomeFirstResponder];
 }
 
-// Income Type按钮点击
-- (void)typeIncomeClick:(id)sender {
+// Type按钮点击
+- (void)typeClick:(id)sender {
     
-    // 修改cost type
-    _cost.type = CostType_Income;
+    // 修改cost type为支出
+    if (_cost.type == CostType_Income) {
+        _cost.type = CostType_Expense;
+        
+        // 设置标题
+        if (!_isEdit) _titleLabel.text = NSLocalizedString(@"NewExpenseTitle", nil);
+        
+        // 修改按钮图片
+        [_typeChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"expense" ofType:@"png"]] forState:UIControlStateNormal];
+    }
     
-    // 设置标题
-    if (!_isEdit) _titleLabel.text = NSLocalizedString(@"NewIncomeTitle", nil);
-    
-    // 更新按钮文本颜色
-    [_typeIncomeButton setTitleColor:_typeSelectedTextColor forState:UIControlStateNormal];
-    [_typeExpenseButton setTitleColor:_typeNoneTextColor forState:UIControlStateNormal];
-    
-    // 更新按钮背景
-    [_typeIncomeButton setBackgroundImage:_typeIncomeSelectedImage forState:UIControlStateNormal];
-    [_typeIncomeButton setBackgroundImage:_typeIncomeSelectedImage forState:UIControlStateHighlighted];
-    [_typeExpenseButton setBackgroundImage:_typeExpenseNoneImage forState:UIControlStateNormal];
-    [_typeExpenseButton setBackgroundImage:_typeExpenseNoneImage forState:UIControlStateHighlighted];
-}
-
-// Expense Type按钮点击
-- (void)typeExpenseClick:(id)sender {
-    
-    // 修改cost type
-    _cost.type = CostType_Expense;
-    
-    // 设置标题
-    if (!_isEdit) _titleLabel.text = NSLocalizedString(@"NewExpenseTitle", nil);
-    
-    // 更新按钮文本颜色
-    [_typeIncomeButton setTitleColor:_typeNoneTextColor forState:UIControlStateNormal];
-    [_typeExpenseButton setTitleColor:_typeSelectedTextColor forState:UIControlStateNormal];
-    
-    // 更新按钮背景
-    [_typeIncomeButton setBackgroundImage:_typeIncomeNoneImage forState:UIControlStateNormal];
-    [_typeIncomeButton setBackgroundImage:_typeIncomeNoneImage forState:UIControlStateHighlighted];
-    [_typeExpenseButton setBackgroundImage:_typeExpenseSelectedImage forState:UIControlStateNormal];
-    [_typeExpenseButton setBackgroundImage:_typeExpenseSelectedImage forState:UIControlStateHighlighted];
+    // 修改cost type为收入
+    else if (_cost.type == CostType_Expense) {
+        _cost.type = CostType_Income;
+        
+        // 设置标题
+        if (!_isEdit) _titleLabel.text = NSLocalizedString(@"NewIncomeTitle", nil);
+        
+        // 修改按钮图片
+        [_typeChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"income" ofType:@"png"]] forState:UIControlStateNormal];
+    }
 }
 
 // Delete Cost 按钮点击
 - (void)deleteCostClick:(id)sender {
     
     // 确认框
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"DeleteAlertTitle", nil) message:NSLocalizedString(@"DeleteAlertMessage", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"DeleteAlertCancelButton", nil) otherButtonTitles:NSLocalizedString(@"DeleteAlertDeleteButton", nil), nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"DeleteAlertMessage", nil) message:nil delegate:self cancelButtonTitle:NSLocalizedString(@"DeleteAlertCancelButton", nil) otherButtonTitles:NSLocalizedString(@"DeleteAlertDeleteButton", nil), nil];
     alert.delegate = self;
     [alert show];
 }

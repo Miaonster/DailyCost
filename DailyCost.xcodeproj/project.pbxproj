@@ -16,7 +16,21 @@
 		E1025FC317F7FCB700400F2C /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1025FC117F7FCB700400F2C /* delete@2x.png */; };
 		E1025FC617F81C9A00400F2C /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = E1025FC417F81C9A00400F2C /* time.png */; };
 		E1025FC717F81C9A00400F2C /* time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1025FC517F81C9A00400F2C /* time@2x.png */; };
+		E11A455B17FCF99700C37C80 /* TagCostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A455917FCF99700C37C80 /* TagCostsViewController.m */; };
+		E11A455C17FCF99700C37C80 /* TagCostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11A455A17FCF99700C37C80 /* TagCostsViewController.xib */; };
 		E149B79E17F9286200B70B6B /* CostContentRect.m in Sources */ = {isa = PBXBuildFile; fileRef = E149B79D17F9286200B70B6B /* CostContentRect.m */; };
+		E175C9E6180019A000FB1357 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = E175C9E4180019A000FB1357 /* more.png */; };
+		E175C9E7180019A000FB1357 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E175C9E5180019A000FB1357 /* more@2x.png */; };
+		E1786BCA1807C61A0087F50F /* trend.png in Resources */ = {isa = PBXBuildFile; fileRef = E1786BC81807C61A0087F50F /* trend.png */; };
+		E1786BCB1807C61A0087F50F /* trend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1786BC91807C61A0087F50F /* trend@2x.png */; };
+		E1786BCE1807C7430087F50F /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = E1786BCC1807C7430087F50F /* setting.png */; };
+		E1786BCF1807C7430087F50F /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1786BCD1807C7430087F50F /* setting@2x.png */; };
+		E1786BD21807C8E10087F50F /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = E1786BD01807C8E10087F50F /* tag.png */; };
+		E1786BD31807C8E10087F50F /* tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1786BD11807C8E10087F50F /* tag@2x.png */; };
+		E1786BD81807CE250087F50F /* expense.png in Resources */ = {isa = PBXBuildFile; fileRef = E1786BD41807CE250087F50F /* expense.png */; };
+		E1786BD91807CE250087F50F /* expense@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1786BD51807CE250087F50F /* expense@2x.png */; };
+		E1786BDA1807CE250087F50F /* income.png in Resources */ = {isa = PBXBuildFile; fileRef = E1786BD61807CE250087F50F /* income.png */; };
+		E1786BDB1807CE250087F50F /* income@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1786BD71807CE250087F50F /* income@2x.png */; };
 		E183427917F26A0900E319B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E183427817F26A0900E319B3 /* Foundation.framework */; };
 		E183427B17F26A0900E319B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E183427A17F26A0900E319B3 /* CoreGraphics.framework */; };
 		E183427D17F26A0900E319B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E183427C17F26A0900E319B3 /* UIKit.framework */; };
@@ -74,8 +88,23 @@
 		E1025FC117F7FCB700400F2C /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
 		E1025FC417F81C9A00400F2C /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time.png; sourceTree = "<group>"; };
 		E1025FC517F81C9A00400F2C /* time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time@2x.png"; sourceTree = "<group>"; };
+		E11A455817FCF99700C37C80 /* TagCostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagCostsViewController.h; sourceTree = "<group>"; };
+		E11A455917FCF99700C37C80 /* TagCostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagCostsViewController.m; sourceTree = "<group>"; };
+		E11A455A17FCF99700C37C80 /* TagCostsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCostsViewController.xib; sourceTree = "<group>"; };
 		E149B79C17F9286200B70B6B /* CostContentRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CostContentRect.h; sourceTree = "<group>"; };
 		E149B79D17F9286200B70B6B /* CostContentRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CostContentRect.m; sourceTree = "<group>"; };
+		E175C9E4180019A000FB1357 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		E175C9E5180019A000FB1357 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
+		E1786BC81807C61A0087F50F /* trend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trend.png; sourceTree = "<group>"; };
+		E1786BC91807C61A0087F50F /* trend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trend@2x.png"; sourceTree = "<group>"; };
+		E1786BCC1807C7430087F50F /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		E1786BCD1807C7430087F50F /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
+		E1786BD01807C8E10087F50F /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
+		E1786BD11807C8E10087F50F /* tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag@2x.png"; sourceTree = "<group>"; };
+		E1786BD41807CE250087F50F /* expense.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expense.png; sourceTree = "<group>"; };
+		E1786BD51807CE250087F50F /* expense@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expense@2x.png"; sourceTree = "<group>"; };
+		E1786BD61807CE250087F50F /* income.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = income.png; sourceTree = "<group>"; };
+		E1786BD71807CE250087F50F /* income@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "income@2x.png"; sourceTree = "<group>"; };
 		E183427517F26A0900E319B3 /* DailyCost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyCost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E183427817F26A0900E319B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E183427A17F26A0900E319B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -221,6 +250,9 @@
 				E18342C817F28E9E00E319B3 /* NewCostViewController.m */,
 				E18342C917F28E9E00E319B3 /* NewCostViewController.xib */,
 				E1DCEF1717F589F200271C6A /* CostItemView.xib */,
+				E11A455817FCF99700C37C80 /* TagCostsViewController.h */,
+				E11A455917FCF99700C37C80 /* TagCostsViewController.m */,
+				E11A455A17FCF99700C37C80 /* TagCostsViewController.xib */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -228,6 +260,18 @@
 		E18342C417F289CB00E319B3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E1786BD41807CE250087F50F /* expense.png */,
+				E1786BD51807CE250087F50F /* expense@2x.png */,
+				E1786BD61807CE250087F50F /* income.png */,
+				E1786BD71807CE250087F50F /* income@2x.png */,
+				E1786BD01807C8E10087F50F /* tag.png */,
+				E1786BD11807C8E10087F50F /* tag@2x.png */,
+				E1786BCC1807C7430087F50F /* setting.png */,
+				E1786BCD1807C7430087F50F /* setting@2x.png */,
+				E1786BC81807C61A0087F50F /* trend.png */,
+				E1786BC91807C61A0087F50F /* trend@2x.png */,
+				E175C9E4180019A000FB1357 /* more.png */,
+				E175C9E5180019A000FB1357 /* more@2x.png */,
 				E1025FC417F81C9A00400F2C /* time.png */,
 				E1025FC517F81C9A00400F2C /* time@2x.png */,
 				E1025FC017F7FCB700400F2C /* delete.png */,
@@ -348,10 +392,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E19938F917F67E9F008A345F /* type_left.png in Resources */,
+				E1786BD31807C8E10087F50F /* tag@2x.png in Resources */,
 				E1025FC317F7FCB700400F2C /* delete@2x.png in Resources */,
+				E11A455C17FCF99700C37C80 /* TagCostsViewController.xib in Resources */,
+				E1786BCB1807C61A0087F50F /* trend@2x.png in Resources */,
 				E1D7123817F5C5B000BD9F3A /* add_mask@2x.png in Resources */,
+				E1786BD81807CE250087F50F /* expense.png in Resources */,
 				E1D7122D17F5C48500BD9F3A /* cost_item_background@2x.png in Resources */,
+				E1786BDB1807CE250087F50F /* income@2x.png in Resources */,
+				E175C9E7180019A000FB1357 /* more@2x.png in Resources */,
 				E1D7123917F5C5B000BD9F3A /* add@2x.png in Resources */,
+				E1786BDA1807CE250087F50F /* income.png in Resources */,
+				E175C9E6180019A000FB1357 /* more.png in Resources */,
 				E1D7123C17F5C5B000BD9F3A /* t_press@2x.png in Resources */,
 				E1DCEF1817F589F200271C6A /* CostItemView.xib in Resources */,
 				E183428517F26A0900E319B3 /* InfoPlist.strings in Resources */,
@@ -359,10 +411,14 @@
 				E19938F117F67E9F008A345F /* add_mask.png in Resources */,
 				E18342BB17F2737B00E319B3 /* Localizable.strings in Resources */,
 				E19938F617F67E9F008A345F /* t_press.png in Resources */,
+				E1786BCE1807C7430087F50F /* setting.png in Resources */,
 				E19938F817F67E9F008A345F /* type_left_press.png in Resources */,
 				E1D7124117F5C5B000BD9F3A /* type_right@2x.png in Resources */,
+				E1786BCA1807C61A0087F50F /* trend.png in Resources */,
+				E1786BD21807C8E10087F50F /* tag.png in Resources */,
 				E1025FC617F81C9A00400F2C /* time.png in Resources */,
 				E1025FBE17F7C5A400400F2C /* point_income.png in Resources */,
+				E1786BD91807CE250087F50F /* expense@2x.png in Resources */,
 				E19938FA17F67E9F008A345F /* type_right_press.png in Resources */,
 				E19938F217F67E9F008A345F /* add.png in Resources */,
 				E19938F717F67E9F008A345F /* t.png in Resources */,
@@ -385,6 +441,7 @@
 				E1D7123E17F5C5B000BD9F3A /* type_left_press@2x.png in Resources */,
 				E1025FBC17F7C5A400400F2C /* point_expense.png in Resources */,
 				E1D7124017F5C5B000BD9F3A /* type_right_press@2x.png in Resources */,
+				E1786BCF1807C7430087F50F /* setting@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +454,7 @@
 			files = (
 				E19938E517F6797C008A345F /* Tag.m in Sources */,
 				E1025FB717F7BC1F00400F2C /* UITagLabel.m in Sources */,
+				E11A455B17FCF99700C37C80 /* TagCostsViewController.m in Sources */,
 				E1DCEEF917F3E8F100271C6A /* Cost.m in Sources */,
 				E149B79E17F9286200B70B6B /* CostContentRect.m in Sources */,
 				E183428B17F26A0900E319B3 /* AppDelegate.m in Sources */,

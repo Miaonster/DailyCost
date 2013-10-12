@@ -209,12 +209,48 @@
 }
 
 
+// 获得所有Cost，按时间倒序排列
+- (NSArray *)allCosts {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    if (databaseIsOK) {
+        sqlite3_stmt *statement;
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ ORDER BY date DESC;", COST_TABLE_NAME];
+        if (sqlite3_prepare_v2(database, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                Cost *cost = [[Cost alloc] initWithSqlite3Stmt:statement];
+                [array addObject:cost];
+            }
+            sqlite3_finalize(statement);
+        }
+    }
+    return array;
+}
+
+
+// 分页获得Cost，按时间倒序排列
+- (NSArray *)pageCostsWithOffset:(NSInteger)offset {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    if (databaseIsOK) {
+        sqlite3_stmt *statement;
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ ORDER BY date DESC LIMT %d,%d;", COST_TABLE_NAME, offset, CostPageCount];
+        if (sqlite3_prepare_v2(database, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                Cost *cost = [[Cost alloc] initWithSqlite3Stmt:statement];
+                [array addObject:cost];
+            }
+            sqlite3_finalize(statement);
+        }
+    }
+    return array;
+}
+
+
 // 获得本月所有Cost，按时间倒序排列
 - (NSArray *)currentMonthAllCosts {
     NSMutableArray *array = [[NSMutableArray alloc] init];
     if (databaseIsOK) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyyMM000000"];
+        [dateFormatter setDateFormat:@"yyyyMM00000000"];
         NSString *sDate = [dateFormatter stringFromDate:[NSDate date]];
         long long date = (long long) sDate.doubleValue;
         sqlite3_stmt *statement;
@@ -251,6 +287,23 @@
         }
     }
     return NO;
+}
+
+// 获得所有给定Tag和Type的Costs
+- (NSArray *)allCostsWithTag:(NSString *)tag andType:(NSInteger)type {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    if (databaseIsOK) {
+        sqlite3_stmt *statement;
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE tag = '%@' AND type = %d ORDER BY date DESC;", COST_TABLE_NAME, tag, type];
+        if (sqlite3_prepare_v2(database, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                Cost *cost = [[Cost alloc] initWithSqlite3Stmt:statement];
+                [array addObject:cost];
+            }
+            sqlite3_finalize(statement);
+        }
+    }
+    return array;
 }
 
 

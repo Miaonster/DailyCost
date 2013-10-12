@@ -19,9 +19,26 @@
 //    return self;
 //}
 
-- (void)inits {
+- (void)initWithCost:(Cost *)aCost {
     self.userInteractionEnabled = YES;
     _isPressingTag = NO;
+    _cost = aCost;
+    
+    NSString *content = _cost.content;
+    _contentText = [NSString stringWithFormat:@"%@", content];
+    
+    // analysis Tag
+    _contentTag = @"";
+    if (content.length > 1) {
+        unichar fc = [content characterAtIndex:0];
+        if (fc == '#') {
+            NSRange end = [content rangeOfString:@" "];
+            _contentTagRange = NSMakeRange(0, end.length == 0 ? content.length : (end.location + end.length - 1));
+            _contentTag = [content substringWithRange:_contentTagRange];
+            _contentTextRange = NSMakeRange(_contentTagRange.length + 1, content.length - (_contentTagRange.length + 1));
+            _contentText = [content substringWithRange:_contentTextRange];
+        }
+    }
 }
 
 //// Only override drawRect: if you perform custom drawing.
@@ -29,24 +46,6 @@
 //- (void)drawRect:(CGRect)rect
 //{
 //}
-
-- (void)setText:(NSString *)text {
-    [super setText:text];
-    _contentText = [NSString stringWithFormat:@"%@", text];
-    
-    // analysis Tag
-    _contentTag = @"";
-    if (text.length > 1) {
-        unichar fc = [text characterAtIndex:0];
-        if (fc == '#') {
-            NSRange end = [text rangeOfString:@" "];
-            _contentTagRange = NSMakeRange(0, end.length == 0 ? text.length : (end.location + end.length - 1));
-            _contentTag = [text substringWithRange:_contentTagRange];
-            _contentTextRange = NSMakeRange(_contentTagRange.length + 1, text.length - (_contentTagRange.length + 1));
-            _contentText = [text substringWithRange:_contentTextRange];
-        }
-    }
-}
 
 - (void)drawTextInRect:(CGRect)rect {
     
@@ -161,7 +160,7 @@
     
     // 只有在Tag区域被按下的状态时，才能触发点击事件
     if (_isPressingTag) {
-        if (_delegate) [_delegate tagLabel:self clickedTag:_contentTag];
+        if (_delegate) [_delegate tagLabel:self clickedTag:_contentTag andCost:_cost];
     }
     
     // 恢复点击状态

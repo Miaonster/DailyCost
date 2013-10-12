@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
@@ -11,8 +11,7 @@
                 <outlet property="inputField" destination="0vj-pe-bQy" id="zVg-Cj-O8a"/>
                 <outlet property="tagTableView" destination="b2d-gb-2mX" id="fiH-cQ-NLs"/>
                 <outlet property="titleLabel" destination="1UP-TN-2Ms" id="Myb-Gk-8bY"/>
-                <outlet property="typeExpenseButton" destination="YUz-IQ-ZHG" id="AgE-l9-C3d"/>
-                <outlet property="typeIncomeButton" destination="JtL-5A-eKo" id="6Dq-dG-omZ"/>
+                <outlet property="typeChangeButton" destination="20S-IS-edp" id="PYX-qV-8n6"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -68,40 +67,26 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bX8-9i-BjO">
-                    <rect key="frame" x="10" y="133" width="66" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QdO-4d-7xe">
+                    <rect key="frame" x="10" y="135" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="#" backgroundImage="t.png">
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="tag.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="t_press.png"/>
                     <connections>
-                        <action selector="tClick:" destination="-1" eventType="touchUpInside" id="Rv5-bc-wcQ"/>
+                        <action selector="tClick:" destination="-1" eventType="touchUpInside" id="lXd-92-xho"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JtL-5A-eKo">
-                    <rect key="frame" x="178" y="133" width="66" height="44"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="20S-IS-edp">
+                    <rect key="frame" x="135" y="135" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" backgroundImage="type_left.png">
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="expense.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="highlighted" backgroundImage="type_left.png"/>
                     <connections>
-                        <action selector="typeIncomeClick:" destination="-1" eventType="touchUpInside" id="jn5-QJ-4cu"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YUz-IQ-ZHG">
-                    <rect key="frame" x="244" y="133" width="66" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" backgroundImage="type_right_press.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="type_right_press.png"/>
-                    <connections>
-                        <action selector="typeExpenseClick:" destination="-1" eventType="touchUpInside" id="PNL-bu-lzM"/>
+                        <action selector="typeClick:" destination="-1" eventType="touchUpInside" id="MI3-Me-Khl"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" id="B83-TO-3UB">
@@ -162,9 +147,7 @@
     <resources>
         <image name="back.png" width="88" height="88"/>
         <image name="complete.png" width="88" height="88"/>
-        <image name="t.png" width="132" height="88"/>
-        <image name="t_press.png" width="132" height="88"/>
-        <image name="type_left.png" width="132" height="88"/>
-        <image name="type_right_press.png" width="132" height="88"/>
+        <image name="expense.png" width="100" height="100"/>
+        <image name="tag.png" width="100" height="100"/>
     </resources>
 </document>

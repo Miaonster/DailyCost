@@ -28,16 +28,7 @@
 // Type Button Text Color
 @property(nonatomic, strong, readonly) UIColor *typeNoneTextColor;
 @property(nonatomic, strong, readonly) UIColor *typeSelectedTextColor;
-
-// Income Type
-@property(nonatomic, strong, readonly) UIImage *typeIncomeNoneImage;
-@property(nonatomic, strong, readonly) UIImage *typeIncomeSelectedImage;
-@property(nonatomic, strong) IBOutlet UIButton *typeIncomeButton;
-
-// Expense Type
-@property(nonatomic, strong, readonly) UIImage *typeExpenseNoneImage;
-@property(nonatomic, strong, readonly) UIImage *typeExpenseSelectedImage;
-@property(nonatomic, strong) IBOutlet UIButton *typeExpenseButton;
+@property(nonatomic, strong) IBOutlet UIButton *typeChangeButton;
 
 // Tag Table
 @property(nonatomic, strong) IBOutlet UITableView *tagTableView;
@@ -63,6 +54,9 @@
 // 根据Input分析出Cost
 - (BOOL)analysis;
 
+// 根据Cost的Type修改对应显示控件的属性
+- (void)updateTypeViewWithCostType;
+
 
 
 // Cost输入文本-输入改变
@@ -80,11 +74,8 @@
 // T按钮点击
 - (IBAction)tClick:(id)sender;
 
-// Income Type按钮点击
-- (IBAction)typeIncomeClick:(id)sender;
-
-// Expense Type按钮点击
-- (IBAction)typeExpenseClick:(id)sender;
+// Type按钮点击
+- (IBAction)typeClick:(id)sender;
 
 // Delete Cost 按钮点击
 - (IBAction)deleteCostClick:(id)sender;
