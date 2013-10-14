@@ -34,8 +34,8 @@
 
 // 定义CostMoneyColor
 #define CostMoneyColor_None       [UIColor colorWithRed:0 green:0 blue:0 alpha:1]
-#define CostMoneyColor_Income     [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/225.0 alpha:1]
-#define CostMoneyColor_Expense    [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/225.0 alpha:1]
+#define CostMoneyColor_Income     [UIColor colorWithRed:76/255.0 green:106/255.0 blue:11/225.0 alpha:1]
+#define CostMoneyColor_Expense    [UIColor colorWithRed:158/255.0 green:65/255.0 blue:3/225.0 alpha:1]
 
 
 
