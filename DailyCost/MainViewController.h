@@ -36,7 +36,7 @@
 
 // Cost List
 @property(nonatomic, strong) IBOutlet UITableView *costTableView;
-@property(nonatomic, strong) IBOutlet UIView *costTableHeaderView;
+//@property(nonatomic, strong) IBOutlet UIView *costTableHeaderView;
 //@property(nonatomic, strong, readonly) UIImage *costItemBackgroundImage;
 //@property(nonatomic, strong, readonly) UIImage *costTypeIncomePointImage;
 //@property(nonatomic, strong, readonly) UIImage *costTypeExpensePointImage;

@@ -126,7 +126,7 @@
     // Money Lable
     UILabel *money = (UILabel *) [cell viewWithTag:101];
     money.text = [NSString stringWithFormat:@"%0.2f", cost.money / 100.0];
-    money.textColor = cost.type == CostType_Income ? CostMoneyColor_Income : cost.type == CostType_Expense ? CostMoneyColor_Expense : CostMoneyColor_None;
+//    money.textColor = cost.type == CostType_Income ? CostMoneyColor_Income : cost.type == CostType_Expense ? CostMoneyColor_Expense : CostMoneyColor_None;
     
     // Content Label
     UITagLabel *content = (UITagLabel *) [cell viewWithTag:102];
@@ -151,9 +151,9 @@
                  [sDate substringWithRange:NSMakeRange(8, 2)],
                  [sDate substringWithRange:NSMakeRange(10, 2)]];
     
-    // ￥Label
-    UILabel *mLabel = (UILabel *) [cell viewWithTag:106];
-    mLabel.textColor = money.textColor;
+//    // ￥Label
+//    UILabel *mLabel = (UILabel *) [cell viewWithTag:106];
+//    mLabel.textColor = money.textColor;
     
     return cell;
 }
