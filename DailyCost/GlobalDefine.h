@@ -14,20 +14,37 @@
 #define _DEBUG                    1
 
 
+
+
 // 定义CostType: Income|Expense
 #define CostType_Income           0x101
 #define CostType_Expense          0x102
 
 
+
+
+
+// 定义CostBackgroundColor
+#define CostBackgroundColor_Income     [UIColor colorWithRed:55/255.0 green:93/255.0 blue:129/225.0 alpha:1]
+#define CostBackgroundColor_Expense    [UIColor colorWithRed:46/255.0 green:176/255.0 blue:189/225.0 alpha:1]
+
+
+
+
+
 // 定义CostMoneyColor
 #define CostMoneyColor_None       [UIColor colorWithRed:0 green:0 blue:0 alpha:1]
-#define CostMoneyColor_Income     [UIColor colorWithRed:76/255.0 green:106/255.0 blue:11/225.0 alpha:1]
-#define CostMoneyColor_Expense    [UIColor colorWithRed:158/255.0 green:65/255.0 blue:3/225.0 alpha:1]
+#define CostMoneyColor_Income     [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/225.0 alpha:1]
+#define CostMoneyColor_Expense    [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/225.0 alpha:1]
+
+
+
+
 
 
 // 定义TagTextColor
-#define CostTagTextColor          [UIColor colorWithRed:51/255.0 green:181/255.0 blue:229/225.0 alpha:1]
-#define CostTagTextPressColor     [UIColor colorWithRed:0/255.0 green:104/255.0 blue:138/225.0 alpha:1]
+#define CostTagTextColor          [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/225.0 alpha:1]
+#define CostTagTextPressColor     [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/225.0 alpha:1]
 
 
 

@@ -8,17 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TagCostsViewController : UIViewController
+@interface TagCostsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 
 - (id)initWithTag:(NSString *)aTag andType:(NSInteger) aType;
 
 
 
-//
+// 内容
 @property(nonatomic, strong, readonly) NSString *tag;
 @property(nonatomic,         readonly) NSInteger type;
 @property(nonatomic, strong, readonly) NSMutableArray *costs;
+@property(nonatomic, strong) IBOutlet UIView *costTableHeaderView;
+@property(nonatomic, strong) IBOutlet UITableView *costTableView;
+//@property(nonatomic, strong, readonly) UIImage *costItemBackgroundImage;
+//@property(nonatomic, strong, readonly) UIImage *costTypeIncomePointImage;
+//@property(nonatomic, strong, readonly) UIImage *costTypeExpensePointImage;
 
 
 
@@ -33,5 +38,11 @@
 
 // Back按钮点击
 - (IBAction)backClick:(id)sender;
+
+
+
+
+// CostItemEdit按钮点击
+- (void)costEditClick:(id)sender;
 
 @end

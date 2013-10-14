@@ -10,9 +10,9 @@
 "IncomeLabel"        = "总收入(￥)";
 "ExpenseLabel"       = "总支出(￥)";
 
-"NewCostTitle"       = "一条新账目";
-"NewIncomeTitle"     = "一条新收入";
-"NewExpenseTitle"    = "一条新支出";
+"NewCostTitle"       = "记录一条新账目";
+"NewIncomeTitle"     = "记录一笔收入";
+"NewExpenseTitle"    = "记录一笔支出";
 "NewCostPlaceholder" = "#给孩子买玩具 68";
 "NewCostIncomeType"        = "收入";
 "NewCostExpenseType"       = "支出";

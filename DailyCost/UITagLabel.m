@@ -23,6 +23,7 @@
     self.userInteractionEnabled = YES;
     _isPressingTag = NO;
     _cost = aCost;
+    _tagClickable = YES;
     
     NSString *content = _cost.content;
     _contentText = [NSString stringWithFormat:@"%@", content];
@@ -35,7 +36,7 @@
             NSRange end = [content rangeOfString:@" "];
             _contentTagRange = NSMakeRange(0, end.length == 0 ? content.length : (end.location + end.length - 1));
             _contentTag = [content substringWithRange:_contentTagRange];
-            _contentTextRange = NSMakeRange(_contentTagRange.length + 1, content.length - (_contentTagRange.length + 1));
+            _contentTextRange = NSMakeRange(_contentTagRange.length == content.length ? content.length : (_contentTagRange.length + 1), (_contentTagRange.length == content.length ? 0 : (content.length - (_contentTagRange.length + 1))));
             _contentText = [content substringWithRange:_contentTextRange];
         }
     }
@@ -61,12 +62,12 @@
     // Draw Tag
     NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                 self.font, NSFontAttributeName,
-                                CostTagTextColor, NSForegroundColorAttributeName,
+                                _tagClickable ? CostTagTextColor : self.textColor, NSForegroundColorAttributeName,
                                 nil];
     CGPoint drawPoint = CGPointMake(0, 0);
     
     // 如果Tag被按下时使用PressColor
-    if (_isPressingTag) [attributes setObject:CostTagTextPressColor forKey:NSForegroundColorAttributeName];
+    if (_tagClickable && _isPressingTag) [attributes setObject:CostTagTextPressColor forKey:NSForegroundColorAttributeName];
     
     // 逐字绘画
     for (int i = 0; i < _contentTag.length; i++) {
@@ -159,7 +160,7 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
     // 只有在Tag区域被按下的状态时，才能触发点击事件
-    if (_isPressingTag) {
+    if (_tagClickable && _isPressingTag) {
         if (_delegate) [_delegate tagLabel:self clickedTag:_contentTag andCost:_cost];
     }
     

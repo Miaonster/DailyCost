@@ -208,6 +208,29 @@
     return NO;
 }
 
+// 根据Cost UUID删除
+- (BOOL)deleteCost:(NSString *)uuid {
+    if (databaseIsOK) {
+        NSString *sql = [NSString stringWithFormat:
+                         @"DELETE FROM %@ WHERE uuid='%@';",
+                         COST_TABLE_NAME,
+                         uuid];
+        char *errorMsg;
+        if (sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK) {
+            
+            // DEBUG
+            if (_DEBUG) NSLog(@"Table(%@) Delete Cost Successful", COST_TABLE_NAME);
+            
+            return YES;
+        } else {
+            
+            // DEBUG
+            if (_DEBUG) NSLog(@"Table(%@) Delete Failed and Error = %@", COST_TABLE_NAME, [NSString stringWithCString:errorMsg encoding:NSUTF8StringEncoding]);
+        }
+    }
+    return NO;
+}
+
 
 // 获得所有Cost，按时间倒序排列
 - (NSArray *)allCosts {
@@ -264,29 +287,6 @@
         }
     }
     return array;
-}
-
-// 根据Cost UUID删除
-- (BOOL)deleteCost:(NSString *)uuid {
-    if (databaseIsOK) {
-        NSString *sql = [NSString stringWithFormat:
-                         @"DELETE FROM %@ WHERE uuid='%@';",
-                         COST_TABLE_NAME,
-                         uuid];
-        char *errorMsg;
-        if (sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK) {
-            
-            // DEBUG
-            if (_DEBUG) NSLog(@"Table(%@) Delete Cost Successful", COST_TABLE_NAME);
-            
-            return YES;
-        } else {
-            
-            // DEBUG
-            if (_DEBUG) NSLog(@"Table(%@) Delete Failed and Error = %@", COST_TABLE_NAME, [NSString stringWithCString:errorMsg encoding:NSUTF8StringEncoding]);
-        }
-    }
-    return NO;
 }
 
 // 获得所有给定Tag和Type的Costs

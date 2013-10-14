@@ -38,7 +38,7 @@
 // Delete
 @property(nonatomic, strong) IBOutlet UIView *deleteRootView;
 @property(nonatomic, strong) IBOutlet UIButton *deleteCostButton;
-@property(nonatomic, strong, readonly) UIImage *deleteCostButtonImage;
+//@property(nonatomic, strong, readonly) UIImage *deleteCostButtonImage;
 
 
 

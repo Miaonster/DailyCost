@@ -33,6 +33,7 @@
 @property(nonatomic, readonly) BOOL isPressingTag;
 - (BOOL)touchInTagRect:(CGPoint)touchPoint;
 
+@property(nonatomic) BOOL tagClickable;
 @property(nonatomic, strong) id<UITagLabelDelegaet> delegate;
 
 @end

@@ -37,10 +37,10 @@
     _expenseLabel.text = NSLocalizedString(@"ExpenseLabel", nil);
     
     // Cost Item Background
-    _costItemBackgroundImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cost_item_background" ofType:@"png"]];
-    _costItemBackgroundImage = [_costItemBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 40, 40) resizingMode:UIImageResizingModeTile];
-    _costTypeIncomePointImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"point_income" ofType:@"png"]];
-    _costTypeExpensePointImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"point_expense" ofType:@"png"]];
+//    _costItemBackgroundImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cost_item_background" ofType:@"png"]];
+//    _costItemBackgroundImage = [_costItemBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 40, 40) resizingMode:UIImageResizingModeTile];
+//    _costTypeIncomePointImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"point_income" ofType:@"png"]];
+//    _costTypeExpensePointImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"point_expense" ofType:@"png"]];
     
     // 设置CostTableHeader
     _costTableView.tableHeaderView = _costTableHeaderView;
@@ -134,7 +134,8 @@
     
     // Background Image
     UIImageView *bg = (UIImageView *) [cell viewWithTag:100];
-    bg.image = _costItemBackgroundImage;
+//    bg.image = _costItemBackgroundImage;
+    bg.backgroundColor = cost.type == CostType_Income ? CostBackgroundColor_Income : cost.type == CostType_Expense ? CostBackgroundColor_Expense : CostMoneyColor_None;
     
     // Money Lable
     UILabel *money = (UILabel *) [cell viewWithTag:101];
@@ -146,9 +147,9 @@
     [content initWithCost:cost];
     content.delegate = self;
     
-    // Cost Type Point
-    UIImageView *point = (UIImageView *) [cell viewWithTag:103];
-    point.image = cost.type == CostType_Income ? _costTypeIncomePointImage : cost.type == CostType_Expense ? _costTypeExpensePointImage : nil;
+//    // Cost Type Point
+//    UIImageView *point = (UIImageView *) [cell viewWithTag:103];
+//    point.image = cost.type == CostType_Income ? _costTypeIncomePointImage : cost.type == CostType_Expense ? _costTypeExpensePointImage : nil;
     
     // Edit Button
     UIButton *edit = (UIButton *) [cell viewWithTag:104];

@@ -71,14 +71,12 @@
     
     // 设置DeleteButtonTitle
     [_deleteCostButton setTitle:NSLocalizedString(@"NewCostDeleteCost", nil) forState:UIControlStateNormal];
-    _deleteCostButtonImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"delete" ofType:@"png"]];
-    _deleteCostButtonImage = [_deleteCostButtonImage resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 20, 20) resizingMode:UIImageResizingModeTile];
-    [_deleteCostButton setBackgroundImage:_deleteCostButtonImage forState:UIControlStateNormal];
+//    _deleteCostButtonImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"delete" ofType:@"png"]];
+//    _deleteCostButtonImage = [_deleteCostButtonImage resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 20, 20) resizingMode:UIImageResizingModeTile];
+//    [_deleteCostButton setBackgroundImage:_deleteCostButtonImage forState:UIControlStateNormal];
     
     // 判断是否为编辑
     if (_cost) {
-        // 设置标题
-        _titleLabel.text = NSLocalizedString(@"NewCostEditCostTitle", nil);
         // 初始显示Cost Content
         _inputField.text = _cost.content;
     } else {
@@ -201,7 +199,8 @@
     if (_cost.type == CostType_Income) {
         
         // 设置标题
-        if (!_isEdit) _titleLabel.text = NSLocalizedString(@"NewIncomeTitle", nil);
+        if (_isEdit) _titleLabel.text = NSLocalizedString(@"NewCostEditCostTitle", nil);
+        else _titleLabel.text = NSLocalizedString(@"NewIncomeTitle", nil);
         
         // 修改按钮图片
         [_typeChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"income" ofType:@"png"]] forState:UIControlStateNormal];
@@ -209,7 +208,8 @@
     } else if (_cost.type == CostType_Expense) {
         
         // 设置标题
-        if (!_isEdit) _titleLabel.text = NSLocalizedString(@"NewExpenseTitle", nil);
+        if (_isEdit) _titleLabel.text = NSLocalizedString(@"NewCostEditCostTitle", nil);
+        else _titleLabel.text = NSLocalizedString(@"NewExpenseTitle", nil);
         
         // 修改按钮图片
         [_typeChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"expense" ofType:@"png"]] forState:UIControlStateNormal];
@@ -272,24 +272,15 @@
     // 修改cost type为支出
     if (_cost.type == CostType_Income) {
         _cost.type = CostType_Expense;
-        
-        // 设置标题
-        if (!_isEdit) _titleLabel.text = NSLocalizedString(@"NewExpenseTitle", nil);
-        
-        // 修改按钮图片
-        [_typeChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"expense" ofType:@"png"]] forState:UIControlStateNormal];
     }
     
     // 修改cost type为收入
     else if (_cost.type == CostType_Expense) {
         _cost.type = CostType_Income;
-        
-        // 设置标题
-        if (!_isEdit) _titleLabel.text = NSLocalizedString(@"NewIncomeTitle", nil);
-        
-        // 修改按钮图片
-        [_typeChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"income" ofType:@"png"]] forState:UIControlStateNormal];
     }
+    
+    // 初始显示Cost Type
+    [self updateTypeViewWithCostType];
 }
 
 // Delete Cost 按钮点击

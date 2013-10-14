@@ -53,6 +53,9 @@
 // 根据Cost UUID更新
 - (BOOL)updateCost:(Cost *)cost withUUID:(NSString *)uuid;
 
+// 根据Cost UUID删除
+- (BOOL)deleteCost:(NSString *)uuid;
+
 // 获得所有Cost，按时间倒序排列
 - (NSArray *)allCosts;
 
@@ -61,9 +64,6 @@
 
 // 获得本月所有Cost，按时间倒序排列
 - (NSArray *)currentMonthAllCosts;
-
-// 根据Cost UUID删除
-- (BOOL)deleteCost:(NSString *)uuid;
 
 // 获得所有给定Tag和Type的Costs
 - (NSArray *)allCostsWithTag:(NSString *)tag andType:(NSInteger)type;
