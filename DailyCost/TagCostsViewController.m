@@ -40,7 +40,23 @@
     _costTableView.tableHeaderView = _costTableHeaderView;
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+    // 设置ContentLabelWidth
+    if (toInterfaceOrientation == UIInterfaceOrientationPortrait ||
+        toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+        _costItemContentLabelWidth = [UIScreen mainScreen].bounds.size.width - 40;
+    } else {
+        _costItemContentLabelWidth = [UIScreen mainScreen].bounds.size.height - 40;
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated {
+    
+    // 设置ContentLabelWidth
+    [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
+    
+    // 重新加载数据
     SqliteHelper *sqliteHelper = [[SqliteHelper alloc] init];
     [sqliteHelper open];
     [_costs removeAllObjects];
@@ -164,7 +180,7 @@
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                 cellFont, NSFontAttributeName,
                                 nil];
-    CGSize constraintSize = CGSizeMake(265.0f, MAXFLOAT);
+    CGSize constraintSize = CGSizeMake(_costItemContentLabelWidth, MAXFLOAT);
     CGSize labelSize = [cost.content boundingRectWithSize:constraintSize options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:attributes context:nil].size;
     return labelSize.height + 110;
 }

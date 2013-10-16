@@ -20,6 +20,7 @@
 @property(nonatomic,         readonly) NSInteger type;
 @property(nonatomic, strong, readonly) NSMutableArray *costs;
 @property(nonatomic, strong) IBOutlet UIView *costTableHeaderView;
+@property(nonatomic, readonly) NSInteger costItemContentLabelWidth;
 @property(nonatomic, strong) IBOutlet UITableView *costTableView;
 //@property(nonatomic, strong, readonly) UIImage *costItemBackgroundImage;
 //@property(nonatomic, strong, readonly) UIImage *costTypeIncomePointImage;

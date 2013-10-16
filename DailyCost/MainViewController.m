@@ -35,6 +35,10 @@
     // 设置收入支出标签文本
     _incomeLabel.text = NSLocalizedString(@"IncomeLabel", nil);
     _expenseLabel.text = NSLocalizedString(@"ExpenseLabel", nil);
+    _incomeLabel.textColor = CostMoneyColor_Income;
+    _expenseLabel.textColor = CostMoneyColor_Expense;
+    _incomeSum.textColor = CostMoneyColor_Income;
+    _expenseSum.textColor = CostMoneyColor_Expense;
     
     // Cost Item Background
 //    _costItemBackgroundImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cost_item_background" ofType:@"png"]];
@@ -42,8 +46,19 @@
 //    _costTypeIncomePointImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"point_income" ofType:@"png"]];
 //    _costTypeExpensePointImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"point_expense" ofType:@"png"]];
     
-//    // 设置CostTableHeader
-//    _costTableView.tableHeaderView = _costTableHeaderView;
+    // 设置CostTableHeader
+    _costTableView.tableHeaderView = _costTableHeaderView;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+    // 设置ContentLabelWidth
+    if (toInterfaceOrientation == UIInterfaceOrientationPortrait ||
+        toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+        _costItemContentLabelWidth = [UIScreen mainScreen].bounds.size.width - 40;
+    } else {
+        _costItemContentLabelWidth = [UIScreen mainScreen].bounds.size.height - 40;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +68,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    // 设置ContentLabelWidth
+    [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
+    
+    // 重新加载数据
     // 从数据库中获得所有本月的Cost
     [self updateCurrentMonthAllCosts];
 }
@@ -169,6 +188,10 @@
 //    UILabel *mLabel = (UILabel *) [cell viewWithTag:106];
 //    mLabel.textColor = money.textColor;
     
+//    // Type Flag
+//    UIView *flag = [cell viewWithTag:107];
+//    flag.backgroundColor = cost.type == CostType_Income ? CostMoneyColor_Income : cost.type == CostType_Expense ? CostMoneyColor_Expense : CostMoneyColor_None;
+    
     return cell;
 }
 
@@ -178,7 +201,7 @@
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                 cellFont, NSFontAttributeName,
                                 nil];
-    CGSize constraintSize = CGSizeMake(265.0f, MAXFLOAT);
+    CGSize constraintSize = CGSizeMake(_costItemContentLabelWidth, MAXFLOAT);
     CGSize labelSize = [cost.content boundingRectWithSize:constraintSize options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:attributes context:nil].size;
     return labelSize.height + 110;
 }

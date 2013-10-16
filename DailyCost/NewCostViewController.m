@@ -130,7 +130,7 @@
         [_tagTableView reloadData];
         
         // 检查是否需要显示TTable
-        _tagTableView.alpha = _tags.count > 0 ? 0.9 : 0;
+        _tagTableView.alpha = _tags.count > 0 ? 0.98 : 0;
     }
 }
 
@@ -359,6 +359,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TItemView"];
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TItemView"];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
     
     Tag *t = [_tags objectAtIndex:indexPath.row];
     cell.textLabel.text = t.name;
