@@ -22,9 +22,6 @@
 @property(nonatomic, strong) IBOutlet UIView *costTableHeaderView;
 @property(nonatomic, readonly) NSInteger costItemContentLabelWidth;
 @property(nonatomic, strong) IBOutlet UITableView *costTableView;
-//@property(nonatomic, strong, readonly) UIImage *costItemBackgroundImage;
-//@property(nonatomic, strong, readonly) UIImage *costTypeIncomePointImage;
-//@property(nonatomic, strong, readonly) UIImage *costTypeExpensePointImage;
 
 
 
@@ -32,6 +29,7 @@
 @property(nonatomic, strong) IBOutlet UIButton *titleButton;
 
 // Sum
+@property(nonatomic, strong) IBOutlet UIView *sumRootView;
 @property(nonatomic, strong) IBOutlet UILabel *sumLabel;
 @property(nonatomic, strong) IBOutlet UILabel *sum;
 

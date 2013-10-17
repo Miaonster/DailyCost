@@ -36,9 +36,7 @@
 @property(nonatomic, strong) NSMutableArray *tags;
 
 // Delete
-@property(nonatomic, strong) IBOutlet UIView *deleteRootView;
 @property(nonatomic, strong) IBOutlet UIButton *deleteCostButton;
-//@property(nonatomic, strong, readonly) UIImage *deleteCostButtonImage;
 
 
 

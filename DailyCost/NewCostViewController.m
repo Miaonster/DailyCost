@@ -27,7 +27,7 @@
             _cost = ec;
             _isEdit = YES;
             _tagTableView.alpha = 0;
-            _deleteRootView.alpha = 1;
+            _deleteCostButton.alpha = 1;
         }
     }
     return self;
@@ -71,9 +71,6 @@
     
     // 设置DeleteButtonTitle
     [_deleteCostButton setTitle:NSLocalizedString(@"NewCostDeleteCost", nil) forState:UIControlStateNormal];
-//    _deleteCostButtonImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"delete" ofType:@"png"]];
-//    _deleteCostButtonImage = [_deleteCostButtonImage resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 20, 20) resizingMode:UIImageResizingModeTile];
-//    [_deleteCostButton setBackgroundImage:_deleteCostButtonImage forState:UIControlStateNormal];
     
     // 判断是否为编辑
     if (_cost) {
@@ -87,7 +84,7 @@
         // 默认非编辑，只有调用了setEditCost后才视为编辑状态
         _isEdit = NO;
         // 隐藏Delete
-        _deleteRootView.alpha = 0;
+        _deleteCostButton.alpha = 0;
     }
     
     // 初始显示Cost Type

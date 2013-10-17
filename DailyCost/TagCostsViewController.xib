@@ -10,6 +10,7 @@
                 <outlet property="costTableView" destination="i8x-o8-0Ow" id="hS4-el-uAc"/>
                 <outlet property="sum" destination="exI-b4-YW4" id="pze-sI-OLd"/>
                 <outlet property="sumLabel" destination="eL2-zh-BQ8" id="wZm-4w-JV2"/>
+                <outlet property="sumRootView" destination="GUk-0G-hs6" id="GW9-g0-qMh"/>
                 <outlet property="titleButton" destination="O8W-ge-bgi" id="eud-JP-E9i"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -53,7 +54,7 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O8W-ge-bgi">
-                    <rect key="frame" x="40" y="25" width="240" height="44"/>
+                    <rect key="frame" x="60" y="28" width="200" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -69,7 +70,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aXR-PR-cco">
-                    <rect key="frame" x="0.0" y="25" width="44" height="44"/>
+                    <rect key="frame" x="10" y="28" width="44" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" image="back.png">

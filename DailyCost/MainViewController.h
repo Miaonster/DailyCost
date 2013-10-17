@@ -24,10 +24,12 @@
 
 
 // 标题
+@property(nonatomic, strong) IBOutlet UIView *titleRootView;
 @property(nonatomic, strong) IBOutlet UIButton *titleButton;
 
 
 // 收入支出
+@property(nonatomic, strong) IBOutlet UIView *sumRootView;
 @property(nonatomic, strong) IBOutlet UILabel *incomeLabel;
 @property(nonatomic, strong) IBOutlet UILabel *expenseLabel;
 @property(nonatomic, strong) IBOutlet UILabel *incomeSum;
@@ -38,9 +40,6 @@
 @property(nonatomic, readonly) NSInteger costItemContentLabelWidth;
 @property(nonatomic, strong) IBOutlet UITableView *costTableView;
 @property(nonatomic, strong) IBOutlet UIView *costTableHeaderView;
-//@property(nonatomic, strong, readonly) UIImage *costItemBackgroundImage;
-//@property(nonatomic, strong, readonly) UIImage *costTypeIncomePointImage;
-//@property(nonatomic, strong, readonly) UIImage *costTypeExpensePointImage;
 @property(nonatomic, strong, readonly) NSDictionary *costContentHeightDic;
 
 

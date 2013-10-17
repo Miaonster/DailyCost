@@ -30,12 +30,6 @@
     // 设置title
     [_titleButton setTitle:_tag forState:UIControlStateNormal];
     
-    // Cost Item Background
-//    _costItemBackgroundImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cost_item_background" ofType:@"png"]];
-//    _costItemBackgroundImage = [_costItemBackgroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 40, 40) resizingMode:UIImageResizingModeTile];
-//    _costTypeIncomePointImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"point_income" ofType:@"png"]];
-//    _costTypeExpensePointImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"point_expense" ofType:@"png"]];
-    
     // 设置CostTableHeader
     _costTableView.tableHeaderView = _costTableHeaderView;
 }
@@ -83,6 +77,9 @@
         _sum.textColor = CostMoneyColor_Expense;
     }
     _sum.text = [NSString stringWithFormat:@"%0.2f", sum / 100.0];
+    
+    // 如果总收入和总支出都为0，则不显示SumView
+    _sumRootView.alpha = sum == 0 ? 0 : 1;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -141,22 +138,16 @@
     
     // Background Image
     UIImageView *bg = (UIImageView *) [cell viewWithTag:100];
-//    bg.image = _costItemBackgroundImage;
     bg.backgroundColor = cost.type == CostType_Income ? CostBackgroundColor_Income : cost.type == CostType_Expense ? CostBackgroundColor_Expense : CostMoneyColor_None;
     
     // Money Lable
     UILabel *money = (UILabel *) [cell viewWithTag:101];
     money.text = [NSString stringWithFormat:@"%0.2f", cost.money / 100.0];
-//    money.textColor = cost.type == CostType_Income ? CostMoneyColor_Income : cost.type == CostType_Expense ? CostMoneyColor_Expense : CostMoneyColor_None;
     
     // Content Label
     UITagLabel *content = (UITagLabel *) [cell viewWithTag:102];
     [content initWithCost:cost];
     content.tagClickable = NO;
-    
-//    // Cost Type Point
-//    UIImageView *point = (UIImageView *) [cell viewWithTag:103];
-//    point.image = cost.type == CostType_Income ? _costTypeIncomePointImage : cost.type == CostType_Expense ? _costTypeExpensePointImage : nil;
     
     // Edit Button
     UIButton *edit = (UIButton *) [cell viewWithTag:104];
@@ -171,10 +162,6 @@
                  [sDate substringWithRange:NSMakeRange(6, 2)],
                  [sDate substringWithRange:NSMakeRange(8, 2)],
                  [sDate substringWithRange:NSMakeRange(10, 2)]];
-    
-//    // ￥Label
-//    UILabel *mLabel = (UILabel *) [cell viewWithTag:106];
-//    mLabel.textColor = money.textColor;
     
     return cell;
 }
