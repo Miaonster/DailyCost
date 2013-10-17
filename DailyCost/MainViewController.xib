@@ -12,7 +12,7 @@
                 <outlet property="expenseSum" destination="yGe-X4-dYG" id="9BM-UZ-rFv"/>
                 <outlet property="incomeLabel" destination="8pR-Rh-RZ5" id="bFN-V8-nhn"/>
                 <outlet property="incomeSum" destination="7wu-uF-VtE" id="E86-M2-Z18"/>
-                <outlet property="titleLabel" destination="Hll-xD-GWy" id="kr5-oP-V2D"/>
+                <outlet property="titleButton" destination="bXS-es-GnF" id="llF-N2-VDS"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -73,13 +73,22 @@
                         <outlet property="delegate" destination="-1" id="ofA-y9-76D"/>
                     </connections>
                 </tableView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hll-xD-GWy">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bXS-es-GnF">
                     <rect key="frame" x="15" y="25" width="290" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <state key="normal" title="Title">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="topCostTableView:" destination="-1" eventType="touchUpInside" id="3Pu-qD-tcN"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4DI-XU-NiS">
                     <rect key="frame" x="263" y="21" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>

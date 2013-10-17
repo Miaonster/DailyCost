@@ -29,7 +29,7 @@
 
 
 // 标题
-@property(nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property(nonatomic, strong) IBOutlet UIButton *titleButton;
 
 // Sum
 @property(nonatomic, strong) IBOutlet UILabel *sumLabel;
@@ -45,5 +45,8 @@
 
 // CostItemEdit按钮点击
 - (void)costEditClick:(id)sender;
+
+// 将CostList移动到最顶端
+- (IBAction)topCostTableView:(id)sender;
 
 @end

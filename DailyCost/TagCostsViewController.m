@@ -28,7 +28,7 @@
     [super viewDidLoad];
     
     // 设置title
-    _titleLabel.text = _tag;
+    [_titleButton setTitle:_tag forState:UIControlStateNormal];
     
     // Cost Item Background
 //    _costItemBackgroundImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cost_item_background" ofType:@"png"]];
@@ -117,6 +117,11 @@
         NewCostViewController *ncvc = [[NewCostViewController alloc] initWithEditCost:cost];
         [self.navigationController pushViewController:ncvc animated:YES];
     }
+}
+
+// 将CostList移动到最顶端
+- (void)topCostTableView:(id)sender {
+    [_costTableView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 

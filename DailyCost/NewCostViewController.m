@@ -51,7 +51,7 @@
     
     // 设置输入提示
     _inputField.placeholder = NSLocalizedString(@"NewCostPlaceholder", nil);
-    [_inputField setValue:[UIColor lightGrayColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [_inputField setValue:[UIColor colorWithWhite:255 alpha:0.6] forKeyPath:@"_placeholderLabel.textColor"];
     
     // 监听软键盘的显示和隐藏
     __weak id weakSelf = self;
@@ -198,6 +198,10 @@
 - (void)updateTypeViewWithCostType {
     if (_cost.type == CostType_Income) {
         
+        // 修改整体背景色
+        self.view.backgroundColor = CostBackgroundColor_Income;
+        _tagTableView.backgroundColor = self.view.backgroundColor;
+        
         // 设置标题
         if (_isEdit) _titleLabel.text = NSLocalizedString(@"NewCostEditCostTitle", nil);
         else _titleLabel.text = NSLocalizedString(@"NewIncomeTitle", nil);
@@ -206,6 +210,10 @@
         [_typeChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"income" ofType:@"png"]] forState:UIControlStateNormal];
         
     } else if (_cost.type == CostType_Expense) {
+        
+        // 修改整体背景色
+        self.view.backgroundColor = CostBackgroundColor_Expense;
+        _tagTableView.backgroundColor = self.view.backgroundColor;
         
         // 设置标题
         if (_isEdit) _titleLabel.text = NSLocalizedString(@"NewCostEditCostTitle", nil);

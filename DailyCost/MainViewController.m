@@ -30,7 +30,7 @@
     _costContentHeightDic = [[NSDictionary alloc] init];
     
     // 设置标题
-    _titleLabel.text = NSLocalizedString(@"MainTitle", nil);
+    [_titleButton setTitle:NSLocalizedString(@"MainTitle", nil) forState:UIControlStateNormal];
     
     // 设置收入支出标签文本
     _incomeLabel.text = NSLocalizedString(@"IncomeLabel", nil);
@@ -123,6 +123,11 @@
 // 更多。。。按钮点击
 - (void)moreClick:(id)sender {
     
+}
+
+// 将CostList移动到最顶端
+- (void)topCostTableView:(id)sender {
+    [_costTableView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 // CostItemEdit按钮点击

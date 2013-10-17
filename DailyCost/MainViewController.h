@@ -24,7 +24,7 @@
 
 
 // 标题
-@property(nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property(nonatomic, strong) IBOutlet UIButton *titleButton;
 
 
 // 收入支出
@@ -59,6 +59,9 @@
 
 // 更多。。。按钮点击
 - (IBAction)moreClick:(id)sender;
+
+// 将CostList移动到最顶端
+- (IBAction)topCostTableView:(id)sender;
 
 
 
