@@ -39,6 +39,10 @@
 		E18342BB17F2737B00E319B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18342BD17F2737B00E319B3 /* Localizable.strings */; };
 		E18342CA17F28E9E00E319B3 /* NewCostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18342C817F28E9E00E319B3 /* NewCostViewController.m */; };
 		E18342CB17F28E9E00E319B3 /* NewCostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E18342C917F28E9E00E319B3 /* NewCostViewController.xib */; };
+		E187FA181810E2040037486F /* expense_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E187FA141810E2040037486F /* expense_selected.png */; };
+		E187FA191810E2040037486F /* expense_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E187FA151810E2040037486F /* expense_selected@2x.png */; };
+		E187FA1A1810E2040037486F /* income_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E187FA161810E2040037486F /* income_selected.png */; };
+		E187FA1B1810E2040037486F /* income_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E187FA171810E2040037486F /* income_selected@2x.png */; };
 		E19938E517F6797C008A345F /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = E19938E417F6797C008A345F /* Tag.m */; };
 		E19938F217F67E9F008A345F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = E19938E717F67E9F008A345F /* add.png */; };
 		E19938F317F67E9F008A345F /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = E19938E817F67E9F008A345F /* back.png */; };
@@ -101,6 +105,10 @@
 		E18342C717F28E9E00E319B3 /* NewCostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCostViewController.h; sourceTree = "<group>"; };
 		E18342C817F28E9E00E319B3 /* NewCostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCostViewController.m; sourceTree = "<group>"; };
 		E18342C917F28E9E00E319B3 /* NewCostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewCostViewController.xib; sourceTree = "<group>"; };
+		E187FA141810E2040037486F /* expense_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expense_selected.png; sourceTree = "<group>"; };
+		E187FA151810E2040037486F /* expense_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expense_selected@2x.png"; sourceTree = "<group>"; };
+		E187FA161810E2040037486F /* income_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = income_selected.png; sourceTree = "<group>"; };
+		E187FA171810E2040037486F /* income_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "income_selected@2x.png"; sourceTree = "<group>"; };
 		E19938E317F6797C008A345F /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
 		E19938E417F6797C008A345F /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		E19938E717F67E9F008A345F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
@@ -216,6 +224,10 @@
 		E18342C417F289CB00E319B3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E187FA141810E2040037486F /* expense_selected.png */,
+				E187FA151810E2040037486F /* expense_selected@2x.png */,
+				E187FA161810E2040037486F /* income_selected.png */,
+				E187FA171810E2040037486F /* income_selected@2x.png */,
 				E1786BD41807CE250087F50F /* expense.png */,
 				E1786BD51807CE250087F50F /* expense@2x.png */,
 				E1786BD61807CE250087F50F /* income.png */,
@@ -334,6 +346,7 @@
 				E1D7123917F5C5B000BD9F3A /* add@2x.png in Resources */,
 				E1786BDA1807CE250087F50F /* income.png in Resources */,
 				E175C9E6180019A000FB1357 /* more.png in Resources */,
+				E187FA1A1810E2040037486F /* income_selected.png in Resources */,
 				E1DCEF1817F589F200271C6A /* CostItemView.xib in Resources */,
 				E183428517F26A0900E319B3 /* InfoPlist.strings in Resources */,
 				E18342CB17F28E9E00E319B3 /* NewCostViewController.xib in Resources */,
@@ -344,10 +357,13 @@
 				E1025FC617F81C9A00400F2C /* time.png in Resources */,
 				E1786BD91807CE250087F50F /* expense@2x.png in Resources */,
 				E19938F217F67E9F008A345F /* add.png in Resources */,
+				E187FA181810E2040037486F /* expense_selected.png in Resources */,
+				E187FA1B1810E2040037486F /* income_selected@2x.png in Resources */,
 				E199390717F70D3A008A345F /* edit@2x.png in Resources */,
 				E1D7123B17F5C5B000BD9F3A /* complete@2x.png in Resources */,
 				E1025FC717F81C9A00400F2C /* time@2x.png in Resources */,
 				E1D7123A17F5C5B000BD9F3A /* back@2x.png in Resources */,
+				E187FA191810E2040037486F /* expense_selected@2x.png in Resources */,
 				E199390617F70D3A008A345F /* edit.png in Resources */,
 				E18342B217F26AE500E319B3 /* MainViewController.xib in Resources */,
 				E19938F417F67E9F008A345F /* complete.png in Resources */,

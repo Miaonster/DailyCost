@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="yXT-Aj-xvO">
-                        <rect key="frame" x="0.0" y="2" width="320" height="128"/>
+                        <rect key="frame" x="0.0" y="5" width="320" height="125"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.69019607839999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>

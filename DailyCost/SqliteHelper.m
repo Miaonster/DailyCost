@@ -289,7 +289,7 @@
     return array;
 }
 
-// 获得所有给定Tag和Type的Costs
+// 获得给定Tag和Type的所有Costs，按时间倒序排列
 - (NSArray *)allCostsWithTag:(NSString *)tag andType:(NSInteger)type {
     NSMutableArray *array = [[NSMutableArray alloc] init];
     if (databaseIsOK) {

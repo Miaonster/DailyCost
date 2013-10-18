@@ -28,7 +28,8 @@
 // Type Button Text Color
 @property(nonatomic, strong, readonly) UIColor *typeNoneTextColor;
 @property(nonatomic, strong, readonly) UIColor *typeSelectedTextColor;
-@property(nonatomic, strong) IBOutlet UIButton *typeChangeButton;
+@property(nonatomic, strong) IBOutlet UIButton *typeChangeIncomeButton;
+@property(nonatomic, strong) IBOutlet UIButton *typeChangeExpenseButton;
 
 // Tag Table
 @property(nonatomic, strong) IBOutlet UITableView *tagTableView;

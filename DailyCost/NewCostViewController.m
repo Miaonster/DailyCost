@@ -87,6 +87,10 @@
         _deleteCostButton.alpha = 0;
     }
     
+    // 消费类型按钮
+    [_typeChangeIncomeButton setTitle:NSLocalizedString(@"NewCostIncomeType", nil) forState:UIControlStateNormal];
+    [_typeChangeExpenseButton setTitle:NSLocalizedString(@"NewCostExpenseType", nil) forState:UIControlStateNormal];
+    
     // 初始显示Cost Type
     [self updateTypeViewWithCostType];
 }
@@ -204,7 +208,12 @@
         else _titleLabel.text = NSLocalizedString(@"NewIncomeTitle", nil);
         
         // 修改按钮图片
-        [_typeChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"income" ofType:@"png"]] forState:UIControlStateNormal];
+//        [_typeChangeIncomeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"income_selected" ofType:@"png"]] forState:UIControlStateNormal];
+//        [_typeChangeExpenseButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"expense" ofType:@"png"]] forState:UIControlStateNormal];
+        
+        [_typeChangeIncomeButton setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateNormal];
+        [_typeChangeExpenseButton setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forState:UIControlStateNormal];
+        [_typeChangeExpenseButton setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateHighlighted];
         
     } else if (_cost.type == CostType_Expense) {
         
@@ -217,7 +226,12 @@
         else _titleLabel.text = NSLocalizedString(@"NewExpenseTitle", nil);
         
         // 修改按钮图片
-        [_typeChangeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"expense" ofType:@"png"]] forState:UIControlStateNormal];
+//        [_typeChangeIncomeButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"income" ofType:@"png"]] forState:UIControlStateNormal];
+//        [_typeChangeExpenseButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"expense_selected" ofType:@"png"]] forState:UIControlStateNormal];
+        
+        [_typeChangeIncomeButton setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.5] forState:UIControlStateNormal];
+        [_typeChangeIncomeButton setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateHighlighted];
+        [_typeChangeExpenseButton setTitleColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1] forState:UIControlStateNormal];
     }
 }
 
@@ -275,12 +289,12 @@
 - (void)typeClick:(id)sender {
     
     // 修改cost type为支出
-    if (_cost.type == CostType_Income) {
+    if (sender == _typeChangeExpenseButton) {
         _cost.type = CostType_Expense;
     }
     
     // 修改cost type为收入
-    else if (_cost.type == CostType_Expense) {
+    else if (sender == _typeChangeIncomeButton) {
         _cost.type = CostType_Income;
     }
     

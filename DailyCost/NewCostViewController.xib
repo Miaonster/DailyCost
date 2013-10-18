@@ -10,7 +10,8 @@
                 <outlet property="inputField" destination="0vj-pe-bQy" id="zVg-Cj-O8a"/>
                 <outlet property="tagTableView" destination="b2d-gb-2mX" id="fiH-cQ-NLs"/>
                 <outlet property="titleLabel" destination="1UP-TN-2Ms" id="Myb-Gk-8bY"/>
-                <outlet property="typeChangeButton" destination="20S-IS-edp" id="PYX-qV-8n6"/>
+                <outlet property="typeChangeExpenseButton" destination="Tdi-La-UPK" id="3GM-WZ-sdk"/>
+                <outlet property="typeChangeIncomeButton" destination="20S-IS-edp" id="fnP-kp-Hmx"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -65,25 +66,42 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" image="tag.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="tClick:" destination="-1" eventType="touchUpInside" id="lXd-92-xho"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="20S-IS-edp">
-                    <rect key="frame" x="70" y="125" width="50" height="50"/>
+                    <rect key="frame" x="60" y="125" width="70" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" image="expense.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <state key="normal" title="Income">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="typeClick:" destination="-1" eventType="touchUpInside" id="MI3-Me-Khl"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tdi-La-UPK">
+                    <rect key="frame" x="130" y="125" width="70" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <state key="normal" title="Expense">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="typeClick:" destination="-1" eventType="touchUpInside" id="SAc-qJ-QMD"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vdl-Qr-cGB">
-                    <rect key="frame" x="190" y="125" width="130" height="50"/>
+                    <rect key="frame" x="210" y="125" width="100" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="Delete">
@@ -116,7 +134,6 @@
     <resources>
         <image name="back.png" width="88" height="88"/>
         <image name="complete.png" width="88" height="88"/>
-        <image name="expense.png" width="100" height="100"/>
         <image name="tag.png" width="100" height="100"/>
     </resources>
 </document>
