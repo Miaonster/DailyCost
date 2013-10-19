@@ -165,9 +165,9 @@
 - (BOOL)insertCost:(Cost *)cost {
     if (databaseIsOK && cost) {
         NSString *sql = [NSString stringWithFormat:
-                         @"INSERT INTO %@ VALUES ('%@', %d, '%@', '%@', %ld, %lld);",
+                         @"INSERT INTO %@ VALUES ('%@', %ld, '%@', '%@', %ld, %lld);",
                          COST_TABLE_NAME,
-                         cost.uuid, cost.type, cost.tag, cost.content, cost.money, cost.date];
+                         cost.uuid, (long)cost.type, cost.tag, cost.content, cost.money, cost.date];
         char *errorMsg;
         if (sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK) {
             
@@ -188,9 +188,9 @@
 - (BOOL)updateCost:(Cost *)cost withUUID:(NSString *)uuid {
     if (databaseIsOK && cost) {
         NSString *sql = [NSString stringWithFormat:
-                         @"UPDATE %@ SET uuid='%@', type=%d, tag='%@', content='%@', money=%ld, date=%lld WHERE uuid='%@';",
+                         @"UPDATE %@ SET uuid='%@', type=%ld, tag='%@', content='%@', money=%ld, date=%lld WHERE uuid='%@';",
                          COST_TABLE_NAME,
-                         cost.uuid, cost.type, cost.tag, cost.content, cost.money, cost.date,
+                         cost.uuid, (long)cost.type, cost.tag, cost.content, cost.money, cost.date,
                          uuid];
         char *errorMsg;
         if (sqlite3_exec(database, [sql UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK) {
@@ -255,7 +255,7 @@
     NSMutableArray *array = [[NSMutableArray alloc] init];
     if (databaseIsOK) {
         sqlite3_stmt *statement;
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ ORDER BY date DESC LIMT %d,%d;", COST_TABLE_NAME, offset, CostPageCount];
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ ORDER BY date DESC LIMT %ld,%d;", COST_TABLE_NAME, (long)offset, CostPageCount];
         if (sqlite3_prepare_v2(database, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 Cost *cost = [[Cost alloc] initWithSqlite3Stmt:statement];
@@ -294,7 +294,7 @@
     NSMutableArray *array = [[NSMutableArray alloc] init];
     if (databaseIsOK) {
         sqlite3_stmt *statement;
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE tag = '%@' AND type = %d ORDER BY date DESC;", COST_TABLE_NAME, tag, type];
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE tag = '%@' AND type = %ld ORDER BY date DESC;", COST_TABLE_NAME, tag, (long)type];
         if (sqlite3_prepare_v2(database, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 Cost *cost = [[Cost alloc] initWithSqlite3Stmt:statement];

@@ -181,7 +181,7 @@
     
     // Edit Button
     UIButton *edit = (UIButton *) [cell viewWithTag:104];
-    [edit setTitle:[NSString stringWithFormat:@"%d", indexPath.row] forState:UIControlStateNormal];
+    [edit setTitle:[NSString stringWithFormat:@"%ld", (long)indexPath.row] forState:UIControlStateNormal];
     [edit addTarget:self action:@selector(costEditClick:) forControlEvents:UIControlEventTouchUpInside];
     
     // Date Label
@@ -192,6 +192,10 @@
                  [sDate substringWithRange:NSMakeRange(6, 2)],
                  [sDate substringWithRange:NSMakeRange(8, 2)],
                  [sDate substringWithRange:NSMakeRange(10, 2)]];
+    
+    // Type icon
+    UIImageView *typeicon = (UIImageView *) [cell viewWithTag:108];
+    typeicon.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:(cost.type == CostType_Income ? @"income_icon" : @"expense_icon") ofType:@"png"]];
     
     return cell;
 }

@@ -43,6 +43,10 @@
 		E187FA191810E2040037486F /* expense_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E187FA151810E2040037486F /* expense_selected@2x.png */; };
 		E187FA1A1810E2040037486F /* income_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E187FA161810E2040037486F /* income_selected.png */; };
 		E187FA1B1810E2040037486F /* income_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E187FA171810E2040037486F /* income_selected@2x.png */; };
+		E187FA201811191F0037486F /* expense_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E187FA1C1811191F0037486F /* expense_icon.png */; };
+		E187FA211811191F0037486F /* expense_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E187FA1D1811191F0037486F /* expense_icon@2x.png */; };
+		E187FA221811191F0037486F /* income_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E187FA1E1811191F0037486F /* income_icon.png */; };
+		E187FA231811191F0037486F /* income_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E187FA1F1811191F0037486F /* income_icon@2x.png */; };
 		E19938E517F6797C008A345F /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = E19938E417F6797C008A345F /* Tag.m */; };
 		E19938F217F67E9F008A345F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = E19938E717F67E9F008A345F /* add.png */; };
 		E19938F317F67E9F008A345F /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = E19938E817F67E9F008A345F /* back.png */; };
@@ -109,6 +113,10 @@
 		E187FA151810E2040037486F /* expense_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expense_selected@2x.png"; sourceTree = "<group>"; };
 		E187FA161810E2040037486F /* income_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = income_selected.png; sourceTree = "<group>"; };
 		E187FA171810E2040037486F /* income_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "income_selected@2x.png"; sourceTree = "<group>"; };
+		E187FA1C1811191F0037486F /* expense_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expense_icon.png; sourceTree = "<group>"; };
+		E187FA1D1811191F0037486F /* expense_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expense_icon@2x.png"; sourceTree = "<group>"; };
+		E187FA1E1811191F0037486F /* income_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = income_icon.png; sourceTree = "<group>"; };
+		E187FA1F1811191F0037486F /* income_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "income_icon@2x.png"; sourceTree = "<group>"; };
 		E19938E317F6797C008A345F /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
 		E19938E417F6797C008A345F /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		E19938E717F67E9F008A345F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
@@ -224,6 +232,10 @@
 		E18342C417F289CB00E319B3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E187FA1C1811191F0037486F /* expense_icon.png */,
+				E187FA1D1811191F0037486F /* expense_icon@2x.png */,
+				E187FA1E1811191F0037486F /* income_icon.png */,
+				E187FA1F1811191F0037486F /* income_icon@2x.png */,
 				E187FA141810E2040037486F /* expense_selected.png */,
 				E187FA151810E2040037486F /* expense_selected@2x.png */,
 				E187FA161810E2040037486F /* income_selected.png */,
@@ -345,7 +357,9 @@
 				E175C9E7180019A000FB1357 /* more@2x.png in Resources */,
 				E1D7123917F5C5B000BD9F3A /* add@2x.png in Resources */,
 				E1786BDA1807CE250087F50F /* income.png in Resources */,
+				E187FA231811191F0037486F /* income_icon@2x.png in Resources */,
 				E175C9E6180019A000FB1357 /* more.png in Resources */,
+				E187FA221811191F0037486F /* income_icon.png in Resources */,
 				E187FA1A1810E2040037486F /* income_selected.png in Resources */,
 				E1DCEF1817F589F200271C6A /* CostItemView.xib in Resources */,
 				E183428517F26A0900E319B3 /* InfoPlist.strings in Resources */,
@@ -354,6 +368,7 @@
 				E1786BCE1807C7430087F50F /* setting.png in Resources */,
 				E1786BCA1807C61A0087F50F /* trend.png in Resources */,
 				E1786BD21807C8E10087F50F /* tag.png in Resources */,
+				E187FA201811191F0037486F /* expense_icon.png in Resources */,
 				E1025FC617F81C9A00400F2C /* time.png in Resources */,
 				E1786BD91807CE250087F50F /* expense@2x.png in Resources */,
 				E19938F217F67E9F008A345F /* add.png in Resources */,
@@ -366,6 +381,7 @@
 				E187FA191810E2040037486F /* expense_selected@2x.png in Resources */,
 				E199390617F70D3A008A345F /* edit.png in Resources */,
 				E18342B217F26AE500E319B3 /* MainViewController.xib in Resources */,
+				E187FA211811191F0037486F /* expense_icon@2x.png in Resources */,
 				E19938F417F67E9F008A345F /* complete.png in Resources */,
 				E19938F317F67E9F008A345F /* back.png in Resources */,
 				E183429017F26A0900E319B3 /* Images.xcassets in Resources */,
